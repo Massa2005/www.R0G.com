@@ -5,6 +5,11 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
+echo '<input type="hidden" name="name" value="'.$_POST["name"].'">';
+echo '<input type="hidden" name="surname" value="'.$_POST["surname"].'">';
+echo '<input type="hidden" name="mail" value="'.$_POST["mail"].'">';
+echo '<input type="hidden" name="password" value="'.$_POST["password"].'">';
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -12,11 +12,11 @@
     background-color: aqua;
 }
 .rowButton{
-    float: right;
+    float: left;
     margin: 0px 3px 0px 3px;
     height: 40px;
     background-color: bisque;
-    width: 80px;
+    width: 100px;
     text-align: center;
     line-height: 40px;
 }
