@@ -3,7 +3,7 @@
     <?php
         ini_set('display_errors','Off');
         session_start();
-        echo '<input type="hidden" id="in-mail" value="'.$_SESSION["mail"].'">';
+        echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
     ?>
     <div id="header">
         <div class="center" style="width:fit-content; top: 110px">
@@ -27,9 +27,17 @@
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");
     let registerButton = document.getElementById("register");
-    let inmail = document.getElementById("in-mail");
+    let result = document.getElementById("result");
+
+    if(result.value=="ok-added"){
+        loadPage("../inPage/dev-game-list.php");
+    }
 
     loginButton.addEventListener("click",(event)=>{loadPage("../inPage/dev-game-list.php");});
+
+    function goToAdd(){
+        window.location.href="dev-add-game.php";
+    }
 
     function loadPage(page){
         console.log("fatto");
