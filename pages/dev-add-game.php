@@ -1,11 +1,11 @@
-
+<link rel="stylesheet" href="../mainStyle.css">
 <html>
     <?php
         ini_set('display_errors','Off');
         echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
         echo '<input type="hidden" id="namein" value="'.$_POST["name"].'">';
         echo '<input type="hidden" id="descriptionin" value="'.$_POST["description"].'">';
-        echo '<input type="hidden" id="datain" value="'.$_POST["data"].'">';
+        echo '<input type="hidden" id="datein" value="'.$_POST["data"].'">';
         echo '<input type="hidden" id="costin" value="'.$_POST["cost"].'">';
     ?>
 
@@ -13,11 +13,11 @@
         <form action="../phps/add-game.php" id="form" method="POST">
 
             <div class="center" style="width: fit-content;">Name</div>
-            <input type="text" id="name" name="name" class="center"><br><br>
-            <div class="center" id="error" style="width: fit-content; color:red;"></div>
+            <input type="text" id="name" name="name" class="center"><br>
+            <div class="center" id="error" style="width: fit-content; color:red;"></div><br>
 
             <div class="center" style="width: fit-content;">Description</div>
-            <input type="text" id="description" name="description" class="center"><br><br>
+            <input type="textarea" id="description" name="description" class="center"><br><br>
 
             <div class="center"  style="width: fit-content;">prezzo</div>
             <input type="number" id="cost" name="cost" class="center"><br><br>
@@ -36,26 +36,26 @@
     let error =document.getElementById("error");
     let name =document.getElementById("name");
     let namein =document.getElementById("namein");
-    let surname =document.getElementById("description");
-    let surnamein =document.getElementById("descriptionin");
-    let mail =document.getElementById("date");
-    let mailin =document.getElementById("datein");
-    let mail =document.getElementById("cost");
-    let mailin =document.getElementById("costin");
+    let description =document.getElementById("description");
+    let descriptionin =document.getElementById("descriptionin");
+    let date =document.getElementById("date");
+    let datein =document.getElementById("datein");
+    let cost =document.getElementById("cost");
+    let costin =document.getElementById("costin");
 
 
     name.value = namein.value;
-    surname.value = surnamein.value;
-    mail.value = mailin.value;
-    password.value = passwordin.value;
+    description.value = descriptionin.value;
+    date.value = datein.value;
+    cost.value = costin.value;
 
     error.innerHTML="";
-
+    console.log("result: ->"+res.value);
     if(res.value == "ok-added"){
         error.innerHTML="";
-        window.location.href="../index.php";
-    }else if(res.value == "no"){
-        error.innerHTML="email già registrata";
+        window.location.href="dev-personal_area.php";
+    }else if(res.value == "no-name"){
+        error.innerHTML="nome gia usato";
     }
 
     function register(){   

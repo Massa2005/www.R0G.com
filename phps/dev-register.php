@@ -1,4 +1,4 @@
-<form action="../pages/pre-register.php" id="form" method="POST">
+<form action="../pages/dev-pre-register.php" id="form" method="POST">
 <?php
 session_start();
 $servername = "localhost";
@@ -9,19 +9,20 @@ echo '<input type="hidden" name="name" value="'.$_POST["name"].'">';
 echo '<input type="hidden" name="surname" value="'.$_POST["surname"].'">';
 echo '<input type="hidden" name="mail" value="'.$_POST["mail"].'">';
 echo '<input type="hidden" name="password" value="'.$_POST["password"].'">';
+echo '<input type="hidden" name="sede" value="'.$_POST["sede"].'">';
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT e_mail FROM utenti WHERE e_mail='".$_POST["mail"]."'";
+    $sql = "SELECT e_mail FROM editori WHERE e_mail='".$_POST["mail"]."'";
     $res = $conn->query($sql) ->fetchAll();
     
     if(count($res)==0){
-        $sql = "INSERT INTO `utenti`(`e_mail`, `nome`, `cognome`, `data_nascita`,  `password`) VALUES ('".$_POST["mail"]."','".$_POST["name"]."','".$_POST["surname"]."','".$_POST["date"]."','".$_POST["password"]."')";
+        $sql = "INSERT INTO `editori`(`e_mail`, `nome`, `password`, `sede`) VALUES ('".$_POST["mail"]."','".$_POST["name"]."', '".$_POST["password"]."', '".$_POST["sede"]."')";
         $res = $conn->query($sql);
         $_SESSION["name"]=$_POST["name"];
         $_SESSION["mail"]=$_POST["mail"];
-        $_SESSION["dev"]="false";
+        $_SESSION["dev"]="true";
         echo '<input type="hidden" name="result" value="ok">';
     }else{
         echo '<input type="hidden" name="result" value="no">';

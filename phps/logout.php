@@ -3,6 +3,7 @@
 
     $_SESSION["name"] = "";
     $_SESSION["mail"] = "";
+    $_SESSION["dev"]= "";
 ?>
 
 <script>

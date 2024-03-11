@@ -1,6 +1,7 @@
 
 .center{
     position: relative;
+    width: fit-content;
     left: 50%;
     transform: translate(-50%,0%);
 }
@@ -26,6 +27,7 @@
     background-color: rgb(182, 182, 182);
 }
 .borderContainer{
+    position: relative;
     width: fit-content;
     height: fit-content;
 
@@ -35,4 +37,31 @@
     border-radius: 5px;
     border-color: rgb(34, 34, 34);
     border-width: 1px;
+}
+#footer{
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    background-color: gray;
+    height: 200px;
+}
+.gameListElement{
+    padding: 10px 10px 10px 10px;
+    background-color: beige;
+    height: 250;
+    width: 1400;
+    margin: 10px 0px 10px 0px;
+}
+.imageOnList{
+    position: absolute;
+    left: 10px;
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+}
+.descriptionOnList{
+    position: absolute;
+    left: 300px;
+    background-color: blanchedalmond;
 }

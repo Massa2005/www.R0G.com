@@ -1,4 +1,4 @@
-<form action="../pages/dev-personal-area.php" id="form" method="POST">
+<form action="../pages/dev-add-game.php" id="form" method="POST">
 <?php
 session_start();
 $servername = "localhost";
@@ -13,17 +13,21 @@ echo '<input type="hidden" name="date" value="'.$_POST["date"].'">';
 try {
     $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT max(id) FROM giochi";
-    $res = $conn->query($sql) ->fetchAll();
-    $id = $res[0]["max(id)"]+1;
-    
-    $sql = "INSERT INTO `giochi`(`id`, `nome`, `descrizione`, `prezzo`, `mail_editore`, `data_pubblicazione`) VALUES (".$id.",'".$_POST["name"]."','".$_POST["description"]."','".$_POST["cost"]."','".$_SESSION["mail"]."','".$_POST["date"]."')";
-    $res = $conn->query($sql);
-    $_SESSION["name"]=$_POST["name"];
-    $_SESSION["mail"]=$_POST["mail"];
-    echo '<input type="hidden" name="result" value="ok-added">';
 
-    
+    $sql = "SELECT * FROM giochi WHERE nome='".$_POST["name"]."' AND mail_editore='".$_SESSION["mail"]."' ";
+    $res = $conn->query($sql) ->fetchAll();
+    if(count($res)==0){
+        $sql = "SELECT max(id) FROM giochi";
+        $res = $conn->query($sql) ->fetchAll();
+        $id = $res[0]["max(id)"]+1;
+        
+        $sql = "INSERT INTO `giochi`(`id`, `nome`, `descrizione`, `prezzo`, `mail_editore`, `data_pubblicazione`) VALUES (".$id.",'".$_POST["name"]."','".$_POST["description"]."','".$_POST["cost"]."','".$_SESSION["mail"]."','".$_POST["date"]."')";
+        $res = $conn->query($sql);
+        echo '<input type="hidden" name="result" value="ok-added">';
+    }else{
+        echo '<input type="hidden" name="result" value="no-name">';
+    }
+
 } catch(PDOException $e) {}
 
 ?>

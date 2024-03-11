@@ -20,6 +20,9 @@
             <input type="submit" value="Login" class="center">
         </form>
     </div>
+    <div class="center" style="top:250px">
+        <a href="pre-register.php" >you haven't registered yet?</a>
+    </div>
     
 </html>
 <script>

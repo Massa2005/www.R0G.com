@@ -4,6 +4,7 @@
         ini_set('display_errors','Off');
         session_start();
         echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
+        echo $_SESSION["mail"];
     ?>
     <div id="header">
         <div class="center" style="width:fit-content; top: 110px">

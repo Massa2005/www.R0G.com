@@ -8,8 +8,8 @@
 
     ?>
 
-    <div class="borderContainer center" style="width: fit-content; top:250px">
-        <form action="../phps/login.php" method="POST">
+    <div class="borderContainer center" style="top:250px">
+        <form action="../phps/dev-login.php" method="POST">
             <div class="center" style="width: fit-content;">Mail</div>
             <input type="text" id="mail" name="mail" class="center"><br><br>
             <div class="center" id="error2" style="width: fit-content; color:red;"></div>
@@ -19,8 +19,11 @@
             <div class="center" id="error1" style="width: fit-content; color:red;"></div>
             <input type="submit" value="Login" class="center">
         </form>
-    </div>
+    </div><br>
     
+    <div class="center" style="top:250px">
+        <a href="dev-pre-register.php" >you haven't registered yet?</a>
+    </div>
 </html>
 <script>
     let inmail = document.getElementById("in-mail");

@@ -1,4 +1,4 @@
-<form action="../pages/pre-login.php" id="form" method="POST">
+<form action="../pages/dev-pre-login.php" id="form" method="POST">
 <?php
 ini_set('display_errors','On');
 session_start();
@@ -11,7 +11,7 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = "SELECT e_mail,nome,password FROM utenti WHERE e_mail='".$_POST["mail"]."'";
+    $sql = "SELECT e_mail,nome,password FROM editori WHERE e_mail='".$_POST["mail"]."'";
     $res = $conn->query($sql)->fetchAll();
     
     if(count($res)>0){
@@ -19,7 +19,7 @@ try {
             echo "ok apposto";
             $_SESSION["mail"]=$_POST["mail"];
             $_SESSION["name"]=$res[0]["nome"];
-            $_SESSION["dev"]="false";
+            $_SESSION["dev"]="true";
             echo '<input type="hidden" name="result" value="ok">';
         }else{
             echo "no password";
