@@ -17,7 +17,7 @@
             <div class="center" id="error" style="width: fit-content; color:red;"></div><br>
 
             <div class="center" style="width: fit-content;">Description</div>
-            <input type="textarea" id="description" name="description" class="center"><br><br>
+            <textarea id="description" name="description" rows="6" cols="50"></textarea><br><br>
 
             <div class="center"  style="width: fit-content;">prezzo</div>
             <input type="number" id="cost" name="cost" class="center"><br><br>
