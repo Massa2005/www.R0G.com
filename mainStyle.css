@@ -47,12 +47,13 @@ input{
     border-width: 1px;
 }
 #footer{
-    position: absolute;
+    position: relative;
+    margin-top: 150px;
     left: 0px;
-    top: 100%;
     width: 100%;
     background-color: gray;
     height: 200px;
+    margin-top: 170px;
 }
 .gameListElement{
     padding: 10px 10px 10px 10px;
@@ -72,4 +73,24 @@ input{
     position: absolute;
     left: 300px;
     background-color: blanchedalmond;
+}
+#searchdiv{
+    position: absolute;
+    top: 25px;
+    width:fit-content;
+}
+#searchbar{
+    height: 30px;
+    width: 200px;
+    font-size: large;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+#searchbutt{
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    background-image: url("sources/search.png");
+    background-position: 2px 2px;
+    background-size: contain;
 }

@@ -7,6 +7,11 @@
         echo '<input type="hidden" id="in-dev" value="'.$_SESSION["dev"].'">';
     ?>
     <div id="header">
+        <div class="center" id="searchdiv">
+            <input type="text" id="searchbar" placeholder="search">
+            <button onclick="search()" id="searchbutt">&nbsp;</button>
+        </div>
+        
         <div class="center" style="width:fit-content; top: 110px">
             <div id="register" class="rowButton">
                 register
@@ -19,18 +24,22 @@
             </div>
         </div>
     </div>
+    <div id="content" style="position:relative; top:160px">
 
-
-    <div id="footer">
-        <a href="pages/dev-pre-login.php">are you a developer?</a>
     </div>
+
+    
 </html>
+<div id="footer" >
+    <a href="pages/dev-pre-login.php">are you a developer?</a>
+</div>
 <script>
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");
     let registerButton = document.getElementById("register");
     let inmail = document.getElementById("in-mail");
     let indev = document.getElementById("in-dev");
+    let sbar = document.getElementById("searchbar");
 
     console.log("dev: ->"+indev.value);
     
@@ -46,7 +55,22 @@
     logoutButton.addEventListener("click",(event)=>{ window.location.href="phps/logout.php";});
     registerButton.addEventListener("click",(event)=>{ window.location.href="pages/pre-register.php";});
 
+    function search(){
+        searchfor(sbar.value);
+    }
+    function searchfor(value){
+        var payload = {
+            "searched":value
+        };
 
+        var data = new FormData();
+        data.append( "json", JSON.stringify( payload ) );
+
+        fetch("inPage/game-search.php", {
+            method: 'POST',
+            body: data
+        }).then(data => data.text()).then(html => document.getElementById('content').innerHTML = html);
+    }
     function loginBehaviour(){
         if(inmail.value== ""){
             window.location.href="pages/pre-login.php";
@@ -56,4 +80,5 @@
             window.location.href="pages/personal_area.php";
         }
     }
+    
 </script>
