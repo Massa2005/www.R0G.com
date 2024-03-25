@@ -68,9 +68,11 @@ input{
 .imageOnList{
     position: absolute;
     left: 10px;
+    background-color: aqua;
+    
     height: 200px;
     width: 200px;
-    background-color: aqua;
+    
 }
 .descriptionOnList{
     position: absolute;
@@ -96,4 +98,8 @@ input{
     background-image: url("sources/search.png");
     background-position: 2px 2px;
     background-size: contain;
+}
+#ciao{
+    border-color: rgba(255, 255, 255, 0);
+    background-color: white;
 }

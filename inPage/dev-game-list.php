@@ -14,11 +14,14 @@
         $res = $conn->query($sql)->fetchAll();
         
         foreach ($res as $item) {
-            echo '<div class="center gameListElement">
-                <div class="center">'.$item["nome"].'</div>
-                <div class="imageOnList">image </div>
-                <div class="descriptionOnList">'.$item["descrizione"].'</div>
-            </div>';
+            echo '<form action="dev-game_page.php" method="post">
+            <input type="hidden" name="id" value="'.$item["id"].'">
+            <div class="center gameListElement">
+            <div class="center">'.$item["nome"].'</div>
+            <button id="ciao"><img src="../sources/bobr curva.jpg" class="imageOnList"></button>
+            <div class="descriptionOnList">'.$item["descrizione"].'</div>
+            </div>
+        </form>';
         }
     
         
@@ -30,8 +33,8 @@
 
 
 ?>
-
-
+        
+        
 <!--
 <div class="center gameListElement">
     <div class="center">Nome</div>

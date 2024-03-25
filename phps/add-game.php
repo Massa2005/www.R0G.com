@@ -1,5 +1,7 @@
 <form action="../pages/dev-add-game.php" id="form" method="POST">
 <?php
+ini_set('display_errors','On');
+error_reporting(E_ALL);
 session_start();
 $servername = "localhost";
 $username = "root";
@@ -17,6 +19,7 @@ try {
     $sql = "SELECT * FROM giochi WHERE nome='".$_POST["name"]."' AND mail_editore='".$_SESSION["mail"]."' ";
     $res = $conn->query($sql) ->fetchAll();
     if(count($res)==0){
+        echo "aggiunto";
         $sql = "SELECT max(id) FROM giochi";
         $res = $conn->query($sql) ->fetchAll();
         $id = $res[0]["max(id)"]+1;
@@ -25,6 +28,7 @@ try {
         $res = $conn->query($sql);
         echo '<input type="hidden" name="result" value="ok-added">';
     }else{
+        echo "non aggiunto";
         echo '<input type="hidden" name="result" value="no-name">';
     }
 
