@@ -24,7 +24,7 @@ try {
         $res = $conn->query($sql) ->fetchAll();
         $id = $res[0]["max(id)"]+1;
         
-        $sql = "INSERT INTO `giochi`(`id`, `nome`, `descrizione`, `prezzo`, `mail_editore`, `data_pubblicazione`) VALUES (".$id.",'".$_POST["name"]."','".$_POST["description"]."','".$_POST["cost"]."','".$_SESSION["mail"]."','".$_POST["date"]."')";
+        $sql = "INSERT INTO `giochi`(`id`, `nome`, `descrizione`, `prezzo`, `mail_editore`, `main_img`, `data_pubblicazione`) VALUES (".$id.",'".$_POST["name"]."','".$_POST["description"]."','".$_POST["cost"]."','".$_SESSION["mail"]."','".$_POST["img"]."','".$_POST["date"]."')";
         $res = $conn->query($sql);
         echo '<input type="hidden" name="result" value="ok-added">';
     }else{

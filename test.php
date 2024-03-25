@@ -20,8 +20,6 @@
             body: formData
 
         }).catch(console.error);
-
-        
     });
 
 </script>

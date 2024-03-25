@@ -24,8 +24,10 @@
             
             <div class="center"  style="width: fit-content;">data pubblicazione</div>
             <input type="date" id="date" name="date" class="center"><br><br>
-
-
+            <input type="hidden" name="img" id="img" value = "x">
+        </form>
+        <form action="" id="formimg">
+            <input type="file" name="" id="inpFile">
         </form>
         <button onclick="register()" class="center">Upload</button>
     </div>
@@ -42,8 +44,11 @@
     let datein =document.getElementById("datein");
     let cost =document.getElementById("cost");
     let costin =document.getElementById("costin");
+    let form = document.getElementById("formimg");
+    let img = document.getElementById("img");
+    let inpFile = document.getElementById("inpFile");
 
-
+    
     name.value = namein.value;
     description.value = descriptionin.value;
     date.value = datein.value;
@@ -58,7 +63,22 @@
         error.innerHTML="nome gia usato";
     }
 
-    function register(){   
+
+    function register(){
+        const endpoint = "../phps/upload_img.php";
+        const formData = new FormData();
+        try {
+            img.value = inpFile.files[0].name;
+            console.log("nome ->"+inpFile.files[0].name);
+            formData.append("inpFile", inpFile.files[0]);
+            fetch(endpoint, {
+                method: "post",
+                body: formData
+            }).catch(console.error);
+        } catch (error) {
+            console.log("immagine vuota");
+        }
+        
         document.getElementById("form").submit();
     }
 </script>

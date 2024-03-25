@@ -14,11 +14,21 @@
         $res = $conn->query($sql)->fetchAll();
         
         foreach ($res as $item) {
+            
+
             echo '<form action="dev-game_page.php" method="post">
             <input type="hidden" name="id" value="'.$item["id"].'">
             <div class="center gameListElement">
             <div class="center">'.$item["nome"].'</div>
-            <button id="ciao"><img src="../sources/bobr curva.jpg" class="imageOnList"></button>
+            <button id="ciao">';
+
+            if($item["main_img"] != "x" && $item["main_img"] != ""){
+                echo'<img src="../sources/'.$item["main_img"].'" class="imageOnList">';
+            }else{
+                echo'<img src="../sources/bobr curva.jpg" class="imageOnList">';
+            }
+
+            echo '</button>
             <div class="descriptionOnList">'.$item["descrizione"].'</div>
             </div>
         </form>';
