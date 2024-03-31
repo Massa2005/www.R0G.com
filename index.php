@@ -5,6 +5,8 @@
         session_start();
         echo '<input type="hidden" id="in-mail" value="'.$_SESSION["mail"].'">';
         echo '<input type="hidden" id="in-dev" value="'.$_SESSION["dev"].'">';
+        echo '<input type="hidden" id="in-search" value="'.$_GET["search"].'">';
+        $_SESSION["searched"] = $_GET["search"];
     ?>
     <div id="header">
         <div class="center" id="searchdiv">
@@ -30,15 +32,20 @@
 
     
 </html>
+
+
 <div id="footer" >
     <a href="pages/dev-pre-login.php">are you a developer?</a>
 </div>
+
+
 <script>
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");
     let registerButton = document.getElementById("register");
     let inmail = document.getElementById("in-mail");
     let indev = document.getElementById("in-dev");
+    let insearch = document.getElementById("in-search");
     let sbar = document.getElementById("searchbar");
 
     console.log("dev: ->"+indev.value);
@@ -51,26 +58,19 @@
         loginButton.innerHTML = "personal area";
     }
 
+    if(insearch.value !=""){
+        sbar.value = insearch.value;
+        loadPage("inPage/game-search.php");
+    }
+
     loginButton.addEventListener("click",(event)=>{loginBehaviour();});
     logoutButton.addEventListener("click",(event)=>{ window.location.href="phps/logout.php";});
     registerButton.addEventListener("click",(event)=>{ window.location.href="pages/pre-register.php";});
 
     function search(){
-        searchfor(sbar.value);
+        window.location.href="index.php?search="+sbar.value;
     }
-    function searchfor(value){
-        var payload = {
-            "searched":value
-        };
 
-        var data = new FormData();
-        data.append( "json", JSON.stringify( payload ) );
-
-        fetch("inPage/game-search.php", {
-            method: 'POST',
-            body: data
-        }).then(data => data.text()).then(html => document.getElementById('content').innerHTML = html);
-    }
     function loginBehaviour(){
         if(inmail.value== ""){
             window.location.href="pages/pre-login.php";
@@ -79,6 +79,10 @@
         }else{
             window.location.href="pages/personal_area.php";
         }
+    }
+    function loadPage(page){
+        console.log("fatto");
+        fetch(page).then(data => data.text()).then(html => document.getElementById('content').innerHTML = html);
     }
     
 </script>
