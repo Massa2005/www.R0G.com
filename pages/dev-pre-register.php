@@ -29,7 +29,7 @@
             <input type="password" id="password2" name="password2" class="center"><br><br>
             <div class="center" id="error2" style="width: fit-content; color:red;"></div>
         </form>
-        <button onclick="register()" class="center">Regiter</button>
+        <button onclick="register()" class="center">Register</button>
     </div>
 </html>
 

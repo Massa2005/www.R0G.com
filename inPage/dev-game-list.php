@@ -14,18 +14,19 @@
         $res = $conn->query($sql)->fetchAll();
         
         foreach ($res as $item) {
-            
-
+            /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
             echo '<form action="dev-game_page.php" method="post">
+            
             <input type="hidden" name="id" value="'.$item["id"].'">
+            
             <div class="center gameListElement">
-            <div class="center">'.$item["nome"].'</div>
+            <div class="center nameofthegameongamelist">'.$item["nome"].'</div>
             <button id="ciao">';
 
             if($item["main_img"] != "x" && $item["main_img"] != ""){
                 echo'<img src="../sources/'.$item["main_img"].'" class="imageOnList">';
             }else{
-                echo'<img src="../sources/bobr curva.jpg" class="imageOnList">';
+                echo'<img src="../sources/image_not_available.jpg" class="imageOnList">';
             }
 
             echo '</button>
