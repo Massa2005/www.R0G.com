@@ -68,7 +68,7 @@ input{
 }
 .imageOnList{
     position: absolute;
-    left: 40px;
+    left: 35px;
     top:35;
     height: 200px;
     width: 200px;
@@ -104,11 +104,20 @@ input{
 }
 #ciao{
     border-color: rgba(255, 255, 255, 0);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
+    
 }
 .nameofthegameongamelist{
     top:20px;
     background-color: rgba(240, 248, 255, 0.112);
     border-radius: 5px;
     padding: 10px 10px 10px 10px;
+}
+#logo{
+    position:absolute;
+    border-radius: 10px;
+    height: auto;
+    width: 100px;
+    left: 25px;
+    top:20px
 }

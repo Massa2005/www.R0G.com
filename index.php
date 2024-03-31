@@ -9,7 +9,11 @@
         $_SESSION["searched"] = $_GET["search"];
     ?>
     <div id="header">
+    <div>
+        <img src="/sources/Logo.png" id="logo">
+    </div>
         <div class="center" id="searchdiv">
+            
             <input type="text" id="searchbar" placeholder="search">
             <button onclick="search()" id="searchbutt">&nbsp;</button>
         </div>

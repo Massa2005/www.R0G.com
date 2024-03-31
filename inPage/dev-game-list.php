@@ -1,4 +1,6 @@
-
+<div style="font-size:40px; position: absolute;top:-100px ; color:white;" class="center">
+    Lista dei giochi
+</div>
 <?php
     session_start();
     $servername = "localhost";
@@ -14,6 +16,7 @@
         $res = $conn->query($sql)->fetchAll();
         
         foreach ($res as $item) {
+            
             /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
             echo '<form action="dev-game_page.php" method="post">
             
