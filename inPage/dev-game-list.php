@@ -1,6 +1,8 @@
+
 <div style="font-size:40px; position: absolute;top:-100px ; color:white;" class="center">
     Lista dei giochi
 </div>
+
 <?php
     session_start();
     $servername = "localhost";
@@ -12,9 +14,16 @@
         $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $sql = "SELECT * FROM giochi WHERE mail_editore='".$_SESSION["mail"]."'";
+        if(isset($_SESSION["searched"])){
+            $sql = "SELECT * FROM giochi WHERE mail_editore='".$_SESSION["mail"]."' AND nome LIKE '%".$_SESSION["searched"]."%'";
+        }else{
+            $sql = "SELECT * FROM giochi WHERE mail_editore='".$_SESSION["mail"]."'";
+        }
+        
         $res = $conn->query($sql)->fetchAll();
         
+
+        //riordina in ordine di ricerca l array res
         foreach ($res as $item) {
             
             /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */

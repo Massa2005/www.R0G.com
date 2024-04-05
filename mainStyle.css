@@ -86,13 +86,16 @@ input{
     position: absolute;
     top: 25px;
     width:fit-content;
+    
 }
+
 #searchbar{
     height: 30px;
     width: 200px;
     font-size: large;
     border-radius: 15px;
     padding-left: 10px;
+    
 }
 #searchbutt{
     border-radius: 15px;
