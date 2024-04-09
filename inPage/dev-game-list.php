@@ -1,4 +1,6 @@
-
+<h1>
+    ciao
+</h1>
 <?php
     session_start();
     $servername = "localhost";

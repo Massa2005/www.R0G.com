@@ -104,7 +104,7 @@ input{
 }
 #ciao{
     border-color: rgba(255, 255, 255, 0);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 .nameofthegameongamelist{
     top:20px;
