@@ -1,14 +1,14 @@
-<<<<<<< HEAD
+
 <h1>
-    ciao
+    
 </h1>
-=======
+
 
 <div style="font-size:40px; position: absolute;top:-100px ; color:white;" class="center">
     Lista dei giochi
 </div>
 
->>>>>>> 57bca500825efcd1368ba047d9e8612b4fd698e3
+
 <?php
     session_start();
     $servername = "localhost";
@@ -37,7 +37,7 @@
             
             <input type="hidden" name="id" value="'.$item["id"].'">
             
-            <div class="center gameListElement">
+            <div class="center gameListElement colorOfInpageElement">
             <div class="center nameofthegameongamelist">'.$item["nome"].'</div>
             <button id="ciao">';
 

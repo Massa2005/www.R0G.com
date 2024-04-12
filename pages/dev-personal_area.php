@@ -12,19 +12,19 @@
         <div>
             <img src="/sources/Logo.png" id="logo">
         </div>
-        <div class="center" id="searchdiv">
+        <div class="center rightFont" id="searchdiv">
             <input type="text" id="searchbar" placeholder="search">
             <button onclick="search()" id="searchbutt">&nbsp;</button>
         </div>
         
         <div class="center" style="width:fit-content; top: 110px">
-            <div id="statistics" class="rowButton">
+            <div id="statistics" class="rowButton rightFont">
                 statistics
             </div>
-            <div id="games" class="rowButton">
+            <div id="games" class="rowButton rightFont">
                 game list
             </div>
-            <div id="personal-info" class="rowButton">
+            <div id="personal-info" class="rowButton rightFont">
                 personal-info
             </div>
         </div>

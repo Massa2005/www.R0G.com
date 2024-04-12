@@ -8,11 +8,11 @@
     ?>
     <div id="header">
         <div class="center" style="width:fit-content; top: 110px">
-            <div id="games" class="rowButton">
-                games
+            <div id="games" class="rowButton rightFont">
+                Games
             </div>
-            <div id="per-info" class="rowButton">
-                personal info
+            <div id="per-info" class="rowButton rightFont">
+                Personal info
             </div>
         </div>
     </div>

@@ -1,3 +1,7 @@
+@font-face {
+    font-family: myFont;
+    src: url(/fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
 body{
     background-color: rgb(79, 84, 93);
 }
@@ -60,9 +64,9 @@ input{
 }
 .gameListElement{
     padding: 10px 10px 10px 10px;
-    background-color: rgb(122, 122, 118);
+    
     height: 250;
-    width: 1400;
+    width: 1000;
     margin: 10px 0px 10px 0px;
     border-radius: 20px;
 }
@@ -108,10 +112,7 @@ input{
 #ciao{
     border-color: rgba(255, 255, 255, 0);
     background-color: rgba(255, 255, 255, 0);
-<<<<<<< HEAD
-=======
-    
->>>>>>> 57bca500825efcd1368ba047d9e8612b4fd698e3
+
 }
 .nameofthegameongamelist{
     top:20px;
@@ -126,4 +127,34 @@ input{
     width: 100px;
     left: 25px;
     top:20px
+}
+#dev-game-central-div{
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    
+    
+}
+.colorOfInpageElement{
+    background-color: rgb(110, 110, 81);
+}
+
+.image{
+
+}
+#LogoGioco{
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: brown;
+    border-style: solid;
+    border-color: aqua;
+    border: 10px 10px 10px 10px;
+    border-radius: 5px;
+    left: 20px;
+    top: 0px;
+    
+}
+.rightFont{
+    font-family: myFont;
 }

@@ -17,29 +17,34 @@
             
             $sql = "SELECT * FROM giochi WHERE id='".$_POST["id"]."'";
             $res = $conn->query($sql)->fetchAll();
-            
-            
+       
         } catch(PDOException $e) {}   
-
-
-
-
     ?>
     <div id="header">
         <div class="center" style="width:fit-content; top: 110px">
-            <div id="register" class="rowButton">
-                statistic
+            <div id="register" class="rowButton rightFont">
+                Statistic
             </div>
-            <div id="log-in" class="rowButton">
-                game
+            <div id="log-in" class="rowButton rightFont">
+                Game
             </div>
-            <div id="log-out" class="rowButton">
-                boh
+            <div id="log-out" class="rowButton rightFont">
+                Boh
             </div>
         </div>
     </div>
-    <div id="content" style="position:relative; top: 300px;">
+    <div id="content" style="position:absolute; top:150px" class="center">
+        <div id="dev-game-central-div" class="center colorOfInpageElement">
+            
+            <div id="LogoGioco" class ="image"></div>
+            <div id="gameName" class= "rightFont"></div>
+           
 
+
+
+
+
+        </div>
 
     </div>
 </html>
@@ -65,5 +70,5 @@
     function loadPage(page){
         console.log("fatto");
         fetch(page).then(data => data.text()).then(html => document.getElementById('content').innerHTML = html);
-    }
+    }*/
 </script>

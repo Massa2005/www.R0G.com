@@ -19,13 +19,13 @@
         </div>
         
         <div class="center" style="width:fit-content; top: 110px">
-            <div id="register" class="rowButton">
+            <div id="register" class="rowButton rightFont">
                 register
             </div>
-            <div id="log-in" class="rowButton">
+            <div id="log-in" class="rowButton rightFont">
                 log-in
             </div>
-            <div id="log-out" class="rowButton">
+            <div id="log-out" class="rowButton rightFont">
                 log-out
             </div>
         </div>
@@ -38,7 +38,7 @@
 </html>
 
 
-<div id="footer" >
+<div id="footer" class="rightFont" >
     <a href="pages/dev-pre-login.php">are you a developer?</a>
 </div>
 

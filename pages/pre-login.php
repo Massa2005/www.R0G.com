@@ -10,13 +10,13 @@
 
     <div class="borderContainer center" style="width: fit-content; top:250px">
         <form action="../phps/login.php" method="POST">
-            <div class="center" style="width: fit-content;">Mail</div>
+            <div class="center rightFont" style="width: fit-content;">Mail</div>
             <input type="text" id="mail" name="mail" class="center"><br><br>
             <div class="center" id="error2" style="width: fit-content; color:red;"></div>
 
-            <div class="center"  style="width: fit-content;">Password</div>
+            <div class="center rightFont"  style="width: fit-content;">Password</div>
             <input type="password" name="password" class="center"><br><br>
-            <div class="center" id="error1" style="width: fit-content; color:red;"></div>
+            <div class="center rightFont" id="error1" style="width: fit-content; color:red;"></div>
             <input type="submit" value="Login" class="center">
         </form>
     </div>

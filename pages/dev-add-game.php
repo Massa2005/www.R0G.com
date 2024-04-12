@@ -12,17 +12,17 @@
     <div class="borderContainer center" style="width: fit-content; top:200px">
         <form action="../phps/add-game.php" id="form" method="POST">
 
-            <div class="center" style="width: fit-content;">Name</div>
+            <div class="center rightFont" style="width: fit-content;">Name</div>
             <input type="text" id="name" name="name" class="center"><br>
             <div class="center" id="error" style="width: fit-content; color:red;"></div><br>
 
-            <div class="center" style="width: fit-content;">Description</div>
+            <div class="center rightFont" style="width: fit-content;">Description</div>
             <textarea id="description" name="description" rows="6" cols="50"></textarea><br><br>
 
-            <div class="center"  style="width: fit-content;">prezzo</div>
+            <div class="center rightFont"  style="width: fit-content;">prezzo</div>
             <input type="number" id="cost" name="cost" class="center"><br><br>
             
-            <div class="center"  style="width: fit-content;">data pubblicazione</div>
+            <div class="center rightFont"  style="width: fit-content;">data pubblicazione</div>
             <input type="date" id="date" name="date" class="center"><br><br>
             <input type="hidden" name="img" id="img" value = "x">
         </form>

@@ -11,25 +11,25 @@
 
     <div class="borderContainer center" style="width: fit-content; top:200px">
         <form action="../phps/dev-register.php" id="form" method="POST">
-            <div class="center" style="width: fit-content;">Mail</div>
+            <div class="center rightFont" style="width: fit-content;">Mail</div>
             <input type="text" id="mail" name="mail" class="center"><br><br>
             <div class="center" id="error" style="width: fit-content; color:red;"></div>
 
-            <div class="center" style="width: fit-content;">Name</div>
+            <div class="center rightFont" style="width: fit-content;">Name</div>
             <input type="text" id="name" name="name" class="center"><br><br>
 
-            <div class="center" style="width: fit-content;">Sede</div>
+            <div class="center rightFont" style="width: fit-content;">Sede</div>
             <input type="text" id="sede" name="sede" class="center"><br><br>
 
-            <div class="center"  style="width: fit-content;">Password</div>
+            <div class="center rightFont"  style="width: fit-content;">Password</div>
             <input type="password" id="password" name="password" class="center"><br><br>
             
 
-            <div class="center"  style="width: fit-content;">Repeat password</div>
+            <div class="center rightFont"  style="width: fit-content;">Repeat password</div>
             <input type="password" id="password2" name="password2" class="center"><br><br>
             <div class="center" id="error2" style="width: fit-content; color:red;"></div>
         </form>
-        <button onclick="register()" class="center">Register</button>
+        <button onclick="register()" class="center rightFont">Register</button>
     </div>
 </html>
 
