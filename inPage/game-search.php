@@ -23,9 +23,9 @@
             <button id="ciao">';
 
             if($item["main_img"] != "x" && $item["main_img"] != ""){
-                echo'<img src="sources/'.$item["main_img"].'" class="imageOnList">';
+                echo'<img style=\'object-fit: cover;\' src="sources/'.$item["main_img"].'" class="imageOnList">';
             }else{
-                echo'<img src="sources/image_not_available.jpg" class="imageOnList">';
+                echo'<img style=\'object-fit: cover;\' src="sources/image_not_available.jpg" class="imageOnList">';
             }
 
             echo '</button>

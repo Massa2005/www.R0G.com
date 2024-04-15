@@ -1,25 +1,55 @@
 <link rel="stylesheet" href="../mainStyle.css">
-<html>
-    <?php
-        ini_set('display_errors','Off');
-        session_start();
-        echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
-        echo $_SESSION["mail"];
+<?php
+    session_start();
+    echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    
+    
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        
-        try {
-            $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT * FROM giochi WHERE id='".$_POST["id"]."'";
+        $res = $conn->query($sql)->fetchAll();
+
+    } catch(PDOException $e) {}   
+?>
+<html>
+    <div id="bg_image" <?php
+        if($res[0]["main_img"] != "" && $res[0]["main_img"] != "x"){
+            echo ' style=\' background-image: url("../sources/'.$res[0]["main_img"].'");  
+            filter: blur(5px); 
+            -webkit-filter: blur(5px);
+            background-repeat: no-repeat;
+            top: 0px;
+            left: 0px;
+            width:100%;
+            height:100%;
+            background-size: cover;
+            position: fixed;
             
-            $sql = "SELECT * FROM giochi WHERE id='".$_POST["id"]."'";
-            $res = $conn->query($sql)->fetchAll();
-       
-        } catch(PDOException $e) {}   
-    ?>
+            \'';
+        }else{
+            echo ' style=\'background-image: url("../sources/image_not_available.jpg");
+             filter: blur(5px); 
+            -webkit-filter: blur(5px);
+            background-repeat: no-repeat;
+            top: 0px;
+            left: 0px;
+            width:100%;
+            height:100%;
+            background-size: cover;
+            position: fixed;
+            
+
+            \'';
+        }
+
+    ?>></div>
+        
     <div id="header">
         <div class="center" style="width:fit-content; top: 110px">
             <div id="register" class="rowButton rightFont">
@@ -33,12 +63,37 @@
             </div>
         </div>
     </div>
-    <div id="content" style="position:absolute; top:150px" class="center">
+    <div id='content' style="position:absolute; top:150px" class="center">
         <div id="dev-game-central-div" class="center colorOfInpageElement">
+            <?php
+                if($res[0]["main_img"] != "" && $res[0]["main_img"] != "x"){
+                    echo '<img id="dev-LogoGioco" style=\'object-fit: cover;\' class ="image" src="../sources/'.$res[0]["main_img"].'">';
+                }else{
+                    echo '<img id="dev-LogoGioco" style=\'object-fit: cover;\' class ="image" src="../sources/image_not_available.jpg">';
+                }
+
+            ?>
             
-            <div id="LogoGioco" class ="image"></div>
-            <div id="gameName" class= "rightFont"></div>
-           
+            
+            <div id="dev-gameName" class= "rightFont">
+                <div id="nomegioco" class="rightFontMoreThicker center" style="font-size:50px;color:black;">
+                    NOMEDELGIOCO
+                </div> 
+            </div>
+            
+            <div id="dev-prezzo" class="rightFont">
+                PREZZO DEL GIOCO CON LO SCONTO
+            </div>
+            <div id="dev-descrizione" class="rightFont">
+                DESCRIZIONE GIOCO,
+                CONTIENE INFORMAZIONI RELATIVE A EDITORE, DATE DI PUBB.
+                
+            </div>
+            <div id="dev-valutazione-Gioco">
+                DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
+
+            </div>
+            <!--QUESTA PAGINA PROBABILMENTE SARA' UGUALE A QUELLA DEL GIOCO UTENTI APPARTE QUALCHE MODIFICA-->
 
 
 
@@ -47,6 +102,7 @@
         </div>
 
     </div>
+    
 </html>
 <script>
 
