@@ -93,7 +93,7 @@
                 DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
 
             </div>
-            <!--QUESTA PAGINA PROBABILMENTE SARA' UGUALE A QUELLA DEL GIOCO UTENTI APPARTE QUALCHE MODIFICA-->
+            <!--QUESTA PAGINA PROBABILMENTE SARA' UGUALE A QUELLA DEL GIOCO UTENTI APPARTE QUALCHE MODIFICA, questa é una prova per il pc di casa mia che improvvisamente ha deciso di non pullarmi piú i progetti a cazzo dui cane-->
 
 
 
