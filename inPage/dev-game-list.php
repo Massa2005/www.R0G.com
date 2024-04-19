@@ -30,8 +30,8 @@
         
 
         //riordina in ordine di ricerca l array res
-        foreach ($res as $item) {
-            
+        for ($i = count($res)-1; $i>=0;$i--) {
+            $item = $res[$i];
             /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
             echo '<form action="dev-game_page.php" method="post">
             

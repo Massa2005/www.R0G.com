@@ -51,6 +51,9 @@
     ?>></div>
         
     <div id="header">
+        <a href="../index.php">
+            <img src="/sources/Logo.png" id="logo">
+        </a>
         <div class="center" style="width:fit-content; top: 110px">
             <div id="register" class="rowButton rightFont">
                 Statistic
@@ -63,31 +66,38 @@
             </div>
         </div>
     </div>
-    <div id='content' style="position:absolute; top:150px" class="center">
+    <div id='content' style="position:absolute; top:150px;" class="center">
         <div id="dev-game-central-div" class="center colorOfInpageElement">
+            
+            
             <?php
                 if($res[0]["main_img"] != "" && $res[0]["main_img"] != "x"){
                     echo '<img id="dev-LogoGioco" style=\'object-fit: cover;\' class ="image" src="../sources/'.$res[0]["main_img"].'">';
                 }else{
                     echo '<img id="dev-LogoGioco" style=\'object-fit: cover;\' class ="image" src="../sources/image_not_available.jpg">';
                 }
-
             ?>
             
-            
             <div id="dev-gameName" class= "rightFont">
-                <div id="nomegioco" class="rightFontMoreThicker center" style="font-size:50px;color:black;">
-                    NOMEDELGIOCO
+                <div id="nomegioco" class="rightFontMoreThicker center" style="font-size:50px;">
+                <?php
+                    echo $res[0]["nome"];
+                ?>
                 </div> 
+                <div class="rightFont center" style="font-size: 60px;">
+                <?php
+                    echo $res[0]["prezzo"];
+                ?>
+                €
+                </div>
             </div>
             
-            <div id="dev-prezzo" class="rightFont">
-                PREZZO DEL GIOCO CON LO SCONTO
-            </div>
+            <div style="height:500px"></div>
+            <div class="gradient"></div>
             <div id="dev-descrizione" class="rightFont">
-                DESCRIZIONE GIOCO,
-                CONTIENE INFORMAZIONI RELATIVE A EDITORE, DATE DI PUBB.
-                
+                <?php
+                    echo $res[0]["descrizione"];
+                ?>
             </div>
             <div id="dev-valutazione-Gioco">
                 DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
@@ -95,14 +105,8 @@
             </div>
             <!--QUESTA PAGINA PROBABILMENTE SARA' UGUALE A QUELLA DEL GIOCO UTENTI APPARTE QUALCHE MODIFICA, questa é una prova per il pc di casa mia che improvvisamente ha deciso di non pullarmi piú i progetti a cazzo dui cane-->
 
-
-
-
-
         </div>
-
     </div>
-    
 </html>
 <script>
 

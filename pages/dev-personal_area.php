@@ -9,9 +9,9 @@
         echo $_SESSION["mail"];
     ?>
     <div id="header">
-        <div>
+        <a href="../index.php">
             <img src="/sources/Logo.png" id="logo">
-        </div>
+        </a>
         <div class="center rightFont" id="searchdiv">
             <input type="text" id="searchbar" placeholder="search">
             <button onclick="search()" id="searchbutt">&nbsp;</button>

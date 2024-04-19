@@ -33,6 +33,7 @@ input{
     width: 100%;
     height: 150px;
     background-color: rgb(23, 30, 150);
+    z-index: 100000;
 }
 .rowButton{
     float: left;
@@ -136,53 +137,65 @@ input{
 #dev-game-central-div{
     position: absolute;
     width: 1000px;
-    height: 2000px;
-    
-    
-    
+    min-height: 800px;
 }
 .colorOfInpageElement{
     background-color: rgba(0, 0, 0, 0.450);
     backdrop-filter: blur(50px);
-    
+    box-shadow:0px 0px 100px 10px black;
 }
 
-.image{
-
-}
 #dev-LogoGioco{
     position: relative;
     height: 400px;
     width: 400px;
-    background-color: rgb(158, 65, 42);
+    float: left;
     border-style: solid;
-    border-color: rgba(71, 71, 71, 0.651);
-    border: 10px 10px 10px 10px;
+    border-color: rgba(180, 180, 180, 0);
     border-radius: 30px;
-    left: 50px;
-    top: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
     
 }
 .rightFont{
     font-family: myFont;
+    color: white;
+}
+.rightFontBlack{
+    font-family: myFont;
+    color: black;
 }
 .rightFontMoreThicker{
     font-family: myFontMoreThicker;
+    color: white;
+    
 }
 #dev-gameName{
-    position:absolute;
-    
-    width: 545px;
-    height: auto;
-    left: 100%;
-    transform: translate(-100%,0%);
-    top:75px;
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 500px;
+    position:relative;
+    float: left;
 }
 #dev-prezzo{
-    position: absolute;
-    top: 50;
+    position:relative;
+    width: 545px;
+    top:250px;
+    
 }
 #dev-descrizione{
-    position: absolute;
-    top:500px;
+    position: relative;
+    
+    left: 0px;
+    width: 800px;
+    padding: 0px 100px 50px 100px;
+    background-color: rgb(63,63,63);
+    }
+.gradient{
+    position: relative;
+    
+    left: 0px;
+    width: 1000px;
+    height: 50px;
+    background: linear-gradient(180deg, rgba(63,63,63,0) 0%, rgba(63,63,63,0.9023984593837535) 51%, rgba(63,63,63,1) 96%, rgba(63,63,63,1) 100%);
 }
