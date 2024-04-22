@@ -2,7 +2,7 @@
 <?php
     session_start();
     echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
-
+    echo '<input type="hidden" id="in-id" value="'.$_POST["id"].'">';
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -89,28 +89,42 @@
                     echo $res[0]["prezzo"];
                 ?>
                 €
-                </div>
+                </div><br><br><br><br><br><br><br>
+
+                <form action="../phps/add-trolley.php" method="post">
+
+                    <input type="hidden" value="" id="id" name="id" class="center">
+                    <input type="submit" value="Buy" id="buy-button" class="center">
+                </form>
+
             </div>
             
             <div style="height:500px"></div>
             <div class="gradient"></div>
-            <div id="dev-descrizione" class="rightFont">
-                <?php
-                    echo $res[0]["descrizione"];
-                ?>
-            </div>
-            <div id="dev-valutazione-Gioco">
-                DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
+            <div id="dev-game-info" class="rightFont">
+                <br>
+                <h1>DESCRIZIONE</h1><br>
+                <div>
+                    <?php
+                        echo $res[0]["descrizione"];
+                    ?>
+                </div><br><br><br>
+                <h1>VALUTAZIONI</h1><br>
+                <div id="dev-valutazione-Gioco">
+                    DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
 
+                </div>
             </div>
+
             <!--QUESTA PAGINA PROBABILMENTE SARA' UGUALE A QUELLA DEL GIOCO UTENTI APPARTE QUALCHE MODIFICA, questa é una prova per il pc di casa mia che improvvisamente ha deciso di non pullarmi piú i progetti a cazzo dui cane-->
-
         </div>
     </div>
 </html>
 <script>
-
+    let idin = document.getElementById("in-id");
+    let id = document.getElementById("id");
     
+    id.value = idin.value;
     /*
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");

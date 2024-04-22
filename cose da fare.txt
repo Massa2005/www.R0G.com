@@ -1,1 +1,4 @@
 -  game page da sistemare
+-  carrello fatto "ID;ID;ID;ID..."
+    - pagina trolley.php
+    - aggiungi, togli

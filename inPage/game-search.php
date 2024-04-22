@@ -14,8 +14,7 @@
             $res = $conn->query($sql)->fetchAll();
             
             foreach ($res as $item) {
-                echo '<form action="pages/game_page.php" method="post">
-            
+                echo '<form action="pages/dev-game_page.php" method="post">
             <input type="hidden" name="id" value="'.$item["id"].'">
             
             <div class="center gameListElement">

@@ -16,7 +16,7 @@
     
         <div class="center" id="searchdiv">
             
-            <input type="text" id="searchbar" placeholder="search">
+            <input type="text" id="searchbar" placeholder="search"  >
             <button onclick="search()" id="searchbutt">&nbsp;</button>
         </div>
         
@@ -72,6 +72,12 @@
     loginButton.addEventListener("click",(event)=>{loginBehaviour();});
     logoutButton.addEventListener("click",(event)=>{ window.location.href="phps/logout.php";});
     registerButton.addEventListener("click",(event)=>{ window.location.href="pages/pre-register.php";});
+    sbar.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            search();
+        }
+    });
 
     function search(){
         window.location.href="index.php?search="+sbar.value;

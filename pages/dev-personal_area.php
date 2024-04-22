@@ -43,7 +43,6 @@
     let sbar = document.getElementById("searchbar");
     let insearch = document.getElementById("in-search");
 
-    console.log("nasconditi");
     searchdiv.style.visibility = "hidden";
 
     if(result.value=="ok-added"){
@@ -58,6 +57,14 @@
     gamesButton.addEventListener("click",(event)=>{
         searchdiv.style.visibility = "visible";
         loadPage("../inPage/dev-game-list.php");
+    });
+    statisticsButton.addEventListener("click",(event)=>{
+        searchdiv.style.visibility = "visible";
+        loadPage("../inPage/dev-statistic.php");
+    });
+    p_infoButton.addEventListener("click",(event)=>{
+        searchdiv.style.visibility = "visible";
+        loadPage("../inPage/dev-personal-info.php");
     });
 
     function goToAdd(){

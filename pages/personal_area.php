@@ -17,7 +17,7 @@
         </div>
     </div>
     <div id="content" style="position:relative; top: 300px;">
-
+        <!-- fetch delle pagine inpage -->
 
     </div>
 </html>
@@ -27,6 +27,7 @@
     let result = document.getElementById("result");
 
     gamesButton.addEventListener("click",(event)=>{loadPage("../inPage/game-list.php");});
+    infoButton.addEventListener("click",(event)=>{loadPage("../inPage/personal-info.php");});
 
     function loadPage(page){
         console.log("fatto");
