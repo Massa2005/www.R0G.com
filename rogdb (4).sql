@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 05, 2024 alle 10:42
--- Versione del server: 10.4.25-MariaDB
--- Versione PHP: 8.1.10
+-- Creato il: Apr 23, 2024 alle 16:34
+-- Versione del server: 10.4.32-MariaDB
+-- Versione PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `commenti` (
   `mail_utente` varchar(255) NOT NULL,
   `titolo` varchar(255) NOT NULL,
   `commento` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -46,14 +46,17 @@ CREATE TABLE `editori` (
   `nome` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `sede` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `editori`
 --
 
 INSERT INTO `editori` (`e_mail`, `nome`, `password`, `sede`) VALUES
-('aaa', 'aaa', 'aaa', 'oriago');
+('aaa', 'aaa', 'aaa', 'oriago'),
+('bbb', 'bbb', 'bbb', 'bbb'),
+('ccc', 'aaa', 'ccc', 'sss'),
+('eee', 'eee', 'eee', 'eee');
 
 -- --------------------------------------------------------
 
@@ -71,14 +74,14 @@ CREATE TABLE `giochi` (
   `main_img` varchar(255) NOT NULL,
   `valutazione` float NOT NULL,
   `data_pubblicazione` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `giochi`
 --
 
 INSERT INTO `giochi` (`id`, `nome`, `descrizione`, `prezzo`, `sconto`, `mail_editore`, `main_img`, `valutazione`, `data_pubblicazione`) VALUES
-(1, 'mortal kombat', 'cazzotti', 60, 0, 'aaa', '', 0, '2024-03-08'),
+(1, 'aaa', 'aaa', 3, 3, 'bbb', 'x', 0, '2024-04-16'),
 (2, 'sss', 'fsad', 3, 0, 'aaa', '', 0, '2024-02-27'),
 (3, 'aaa', 'aaa', 23, 0, 'aaa', '', 0, '2024-02-28'),
 (4, 'fff', 'ssss', 3, 0, 'aaa', '', 0, '0000-00-00'),
@@ -91,7 +94,12 @@ INSERT INTO `giochi` (`id`, `nome`, `descrizione`, `prezzo`, `sconto`, `mail_edi
 (11, '14123', 'qadsf', 234, 0, 'aaa', 'barche.png', 0, '2024-03-15'),
 (12, 'ee', 'adasf', 315, 0, 'aaa', 'Icon.png', 0, '2024-03-16'),
 (13, 'hreasfg', 'wryaghjjj', 134, 0, 'aaa', 'myflixer.png', 0, '2024-03-15'),
-(14, 'egqwreq', 'fqegd', 12, 0, 'aaa', 'x', 0, '2024-03-08');
+(14, 'egqwreq', 'fqegd', 12, 0, 'aaa', 'x', 0, '2024-03-08'),
+(15, 'lol', 'gioco', 2, 2, 'bbb', 'x', 0, '2024-04-15'),
+(16, 'helo', 'aaa', 3, 1, 'ccc', 'x', 0, '2024-04-22'),
+(17, 'dasdas', 'fewqre', 0, 0, 'ccc', 'x', 0, '2024-04-16'),
+(18, 'gianni', 'roberto', 44, 33, 'aaa', 'x', 0, '2024-05-16'),
+(19, 'uuuuuuuuuuuuuuuuu', 'dd', 4, 4, 'aaa', 'x', 0, '2024-04-18');
 
 -- --------------------------------------------------------
 
@@ -102,7 +110,7 @@ INSERT INTO `giochi` (`id`, `nome`, `descrizione`, `prezzo`, `sconto`, `mail_edi
 CREATE TABLE `immagini` (
   `game_id` int(11) NOT NULL,
   `source_img` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -113,7 +121,7 @@ CREATE TABLE `immagini` (
 CREATE TABLE `keys` (
   `game_id` int(11) NOT NULL,
   `key` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -126,7 +134,7 @@ CREATE TABLE `libreria` (
   `game_id` int(11) NOT NULL,
   `data_acquisto` date NOT NULL DEFAULT current_timestamp(),
   `a_key` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,7 +145,7 @@ CREATE TABLE `libreria` (
 CREATE TABLE `r_tag_game` (
   `game_id` int(11) NOT NULL,
   `tag_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -147,7 +155,7 @@ CREATE TABLE `r_tag_game` (
 
 CREATE TABLE `tags` (
   `tag` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -162,7 +170,7 @@ CREATE TABLE `utenti` (
   `data_nascita` date NOT NULL,
   `data_account` date NOT NULL DEFAULT current_timestamp(),
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `utenti`
@@ -223,8 +231,8 @@ ALTER TABLE `libreria`
 -- Indici per le tabelle `r_tag_game`
 --
 ALTER TABLE `r_tag_game`
-  ADD KEY `cicciopasticcio` (`game_id`),
-  ADD KEY `tag_ref` (`tag_name`);
+  ADD KEY `tag_ref` (`tag_name`),
+  ADD KEY `game_id_ref` (`game_id`);
 
 --
 -- Indici per le tabelle `tags`
@@ -239,6 +247,22 @@ ALTER TABLE `utenti`
   ADD PRIMARY KEY (`e_mail`);
 
 --
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `commenti`
+--
+ALTER TABLE `commenti`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `giochi`
+--
+ALTER TABLE `giochi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
 -- Limiti per le tabelle scaricate
 --
 
@@ -246,7 +270,7 @@ ALTER TABLE `utenti`
 -- Limiti per la tabella `commenti`
 --
 ALTER TABLE `commenti`
-  ADD CONSTRAINT `game_id_on_comment` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `game_ref_com` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `user_id_on_comment` FOREIGN KEY (`mail_utente`) REFERENCES `utenti` (`e_mail`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -259,27 +283,27 @@ ALTER TABLE `giochi`
 -- Limiti per la tabella `immagini`
 --
 ALTER TABLE `immagini`
-  ADD CONSTRAINT `game_source` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `game_ref_img` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limiti per la tabella `keys`
 --
 ALTER TABLE `keys`
-  ADD CONSTRAINT `game_id_key_ref` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `geme_ref_key` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limiti per la tabella `libreria`
 --
 ALTER TABLE `libreria`
   ADD CONSTRAINT `a_key_ref` FOREIGN KEY (`a_key`) REFERENCES `keys` (`key`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `game_id_ref` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `game_ref` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `nonrompereilcazzo_mail_key_ref` FOREIGN KEY (`mail_utente`) REFERENCES `utenti` (`e_mail`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `r_tag_game`
 --
 ALTER TABLE `r_tag_game`
-  ADD CONSTRAINT `cicciopasticcio` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `game_id_ref` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `tag_ref` FOREIGN KEY (`tag_name`) REFERENCES `tags` (`tag`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
