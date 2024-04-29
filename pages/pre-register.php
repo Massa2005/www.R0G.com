@@ -12,25 +12,25 @@
     <div class="borderContainer center" style="width: fit-content; top:200px">
         <form action="../phps/register.php" id="form" method="POST">
             <div class="center rightFont" style="width: fit-content;">Mail</div>
-            <input type="text" id="mail" name="mail" class="center"><br><br>
+            <input type="text" name="mail" class="center inputForField"><br><br>
             <div class="center rightFont" id="error" style="width: fit-content; color:red;"></div>
 
             <div class="center rightFont" style="width: fit-content;">Name</div>
-            <input type="text" id="name" name="name" class="center"><br><br>
+            <input type="text" id="name" name="name" class="center inputForField"><br><br>
 
             <div class="center rightFont" style="width: fit-content;">Surname</div>
-            <input type="text" id="surname" name="surname" class="center"><br><br>
+            <input type="text" id="surname" name="surname" class="center inputForField"><br><br>
 
             <div class="center" style="width: fit-content;">Birth date</div>
-            <input type="date" id="date" name="date" class="center"><br><br>
+            <input type="date" id="date" name="date" class="center inputForField"><br><br>
 
             <div class="center rightFont"  style="width: fit-content;">Password</div>
-            <input type="password" id="password" name="password" class="center"><br><br>
+            <input type="password"  name="password" class="center inputForField"><br><br>
             
 
             <div class="center rightFont"  style="width: fit-content;">Repeat password</div>
-            <input type="password" id="password2" name="password2" class="center"><br><br>
-            <div class="center rightFont" id="error2" style="width: fit-content; color:red;"></div>
+            <input type="password" id="password2" name="password2" class="center inputForField"><br><br>
+            <div class="center rightFont Loginbutton" id="error2" style="width: fit-content; color:red;"></div>
         </form>
         <button onclick="register()" class="center">Regiter</button>
     </div>

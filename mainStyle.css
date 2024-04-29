@@ -57,7 +57,39 @@ input{
     border-style: solid;
     border-radius: 5px;
     border-color: rgb(34, 34, 34);
-    border-width: 1px;
+    border-width: 5px;
+}
+#mail{
+    height: 50;
+    width: 400;
+    font-size: 25;
+    border: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 0px 0px 0px 30px;
+    outline: none;
+
+}
+.inputForField{
+    height: 50;
+    width: 400;
+    font-size: 25;
+    border: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 0px 0px 0px 30px;
+    outline: none;
+}
+.Loginbutton{
+    height: 30px;
+    width: 100px;
+    border: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
 }
 #footer{
     position: relative;
@@ -214,5 +246,23 @@ input{
     font-family: myFontMoreThicker;
     border-color: rgba(240, 248, 255, 0);
     border-radius: 10px;
+    border-width: 0px;
+}
+#addGameButt{
+    position: absolute;
+    top: -100px;
+    height: 50px;
+    width: 100px;
+    left: 70% ;
+    background-color: black;
+    color: white;
+
+    border-style: solid;
+    border-radius: 10px;
+    outline: none;
+}
+#addGameButt:hover{
+    background-image: linear-gradient();
+    color: black;
     border-width: 0px;
 }

@@ -71,6 +71,6 @@
     <div class="descriptionOnList" >description</div>
 </div>
 -->
-<button onclick="goToAdd()">
-    add game
+<button onclick="goToAdd()" id="addGameButt">
+    ADD GAME
 </button>
