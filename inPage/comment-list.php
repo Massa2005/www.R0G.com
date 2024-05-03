@@ -1,14 +1,3 @@
-
-<h1>
-    
-</h1>
-
-
-<div style="font-size:40px; position: absolute;top:-100px ; color:white;" class="center">
-    Lista dei giochi
-</div>
-
-
 <?php
     session_start();
     $servername = "localhost";
@@ -20,11 +9,9 @@
         $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if(isset($_SESSION["searched"])){
-            $sql = "SELECT * FROM giochi WHERE mail_editore='".$_SESSION["mail"]."' AND nome LIKE '%".$_SESSION["searched"]."%'";
-        }else{
-            $sql = "SELECT * FROM giochi WHERE mail_editore='".$_SESSION["mail"]."'";
-        }
+        
+        $sql = "SELECT * FROM commenti WHERE game_id='".$_SESSION["game_id"]."'";
+        
         
         $res = $conn->query($sql)->fetchAll();
         
@@ -38,17 +25,13 @@
             <input type="hidden" name="id" value="'.$item["id"].'">
             <button id="ciao" class="center">
             <div class=" gameListElement colorOfInpageElement">
-            <div class="center nameofthegameongamelist">'.$item["nome"].'</div>
+            <div class="center nameofthegameongamelist">'.$item["titolo"].'</div>
             ';
-
-            if($item["main_img"] != "x" && $item["main_img"] != ""){
-                echo'<img style=\'object-fit: cover;\' src="../sources/'.$item["main_img"].'" class="imageOnList">';
-            }else{
-                echo'<img style=\'object-fit: cover;\' src="../sources/image_not_available.jpg" class="imageOnList">';
-            }
+            
+            
 
             echo '
-            <div class="descriptionOnList">'.$item["descrizione"].'</div>
+            <div class="descriptionOnList">'.$item["valutazione"].'</div>
             </div></button>
         </form>';
         }
@@ -71,6 +54,6 @@
     <div class="descriptionOnList" >description</div>
 </div>
 -->
-<button onclick="goToAdd()" id="addGameButt">
-    ADD GAME
+<button id="addGameButt">
+    ADD COMMENT
 </button>

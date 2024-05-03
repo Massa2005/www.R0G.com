@@ -1,0 +1,64 @@
+DELIMITER //
+
+CREATE PROCEDURE InsertTaskAndData(
+    IN creatorid INT,
+    IN descrizione TEXT,
+    IN nome VARCHAR(255),
+    IN inputList TEXT, -- Una stringa contenente gli input separati da un delimitatore, ad esempio ","
+    IN outputList TEXT -- Una stringa contenente gli output separati da un delimitatore, ad esempio ","
+)
+BEGIN
+    DECLARE task_id INT;
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE i INT DEFAULT 1;
+    DECLARE input_val TEXT;
+    DECLARE output_val TEXT;
+
+    -- Inizia la transazione
+    START TRANSACTION;
+
+    -- Inserisce il task nella tabella "task"
+    INSERT INTO task (creatorid, descrizione, stars, nome) 
+    VALUES (creatorid, descrizione, 0, nome);
+
+    -- Ottiene l'ID del task appena inserito
+    SET task_id = LAST_INSERT_ID();
+
+    -- Cancella le righe correlate nella tabella "data"
+    DELETE FROM data WHERE taskid = task_id;
+
+    -- Inserisce i nuovi dati nella tabella "data"
+    WHILE i <= LENGTH(inputList) DO
+        -- Trova la fine del prossimo valore input
+        IF INSTR(SUBSTRING(inputList, i), '`') = 0 THEN
+            SET done = TRUE;
+            SET input_val = SUBSTRING(inputList, i);
+        ELSE
+            SET input_val = SUBSTRING(inputList, i, INSTR(SUBSTRING(inputList, i), ',') - 1);
+        END IF;
+
+        -- Trova il corrispondente valore output
+        IF INSTR(SUBSTRING(outputList, i), ',') = 0 THEN
+            SET output_val = SUBSTRING(outputList, i);
+        ELSE
+            SET output_val = SUBSTRING(outputList, i, INSTR(SUBSTRING(outputList, i), ',') - 1);
+        END IF;
+
+        -- Inserisce il valore nella tabella "data"
+        INSERT INTO data (taskid, input, output, lineid) 
+        VALUES (task_id, input_val, output_val, i);
+
+        -- Aggiorna l'indice per il prossimo valore
+        SET i = i + LENGTH(input_val) + 1;
+
+        -- Esci dal ciclo se non ci sono più valori da processare
+        IF done THEN
+            LEAVE;
+        END IF;
+    END WHILE;
+
+    -- Completa la transazione
+    COMMIT;
+END //
+
+DELIMITER ;

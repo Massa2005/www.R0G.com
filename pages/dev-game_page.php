@@ -3,6 +3,7 @@
     session_start();
     echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
     echo '<input type="hidden" id="in-id" value="'.$_POST["id"].'">';
+    $_SESSION["game_id"] = $_POST["id"];
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -114,6 +115,9 @@
                     DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
 
                 </div>
+                <form action="../phps/add-comment.php" method="post">
+                    form per aggiungere commento
+                </form>
             </div>
 
             <!--QUESTA PAGINA PROBABILMENTE SARA' UGUALE A QUELLA DEL GIOCO UTENTI APPARTE QUALCHE MODIFICA, questa é una prova per il pc di casa mia che improvvisamente ha deciso di non pullarmi piú i progetti a cazzo dui cane-->
@@ -123,8 +127,12 @@
 <script>
     let idin = document.getElementById("in-id");
     let id = document.getElementById("id");
+    let commenti = document.getElementById("dev-valutazione-Gioco");
     
     id.value = idin.value;
+    
+    fetch("../inPage/comment-list.php").then(data => data.text()).then(html => commenti.innerHTML = html);
+
     /*
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");

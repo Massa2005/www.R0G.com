@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html{
+  user-select: none;
+  -webkit-user-drag: none;
+}
+body {
+  background: linear-gradient(45deg, #57003f 0%,#f57453 100%);
+  font-family: 'Ubuntu';
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#ncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 20%;
+  top: 55%;
+  z-index: 0;
+}
+
+#scontainer {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    position: absolute;
+    left: 45%;
+    top: 55%;
+    z-index: 0;
+  }
+
+  #lcontainer {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    z-index: 0;
+  }
+  
+#pcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  left: 65%;
+  top: 20%;
+  width: 600px;
+  height: 250px;
+  z-index: 0;
+}
+
+.Notebook {
+  box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+}
+
+.Leaderboard {
+  box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+  width: 600px;
+  height: 400px;
+}
+
+.Profile {
+  box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+}
+
+#lNotebook__Toolbar,
+#sNotebook__Toolbar,
+#rNotebook__Toolbar,
+#Profile__Toolbar {
+  cursor: move; 
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.Toolbar__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.Toolbar__button {
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 0;
+  font-size: 7px;
+  background: linear-gradient(#7d7871 0%, #595953 100%);
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.2);
+  box-shadow: 0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;
+  border: none;
+  margin-right: 4px;
+
+}
+.Toolbar__button:hover {
+  cursor: pointer;
+}
+.Toolbar__button--exit {
+  background: #f25d2b;
+  background: linear-gradient(#f37458 0%, #de4c12 100%);
+  background-clip: padding-box;
+}
+.Toolbar__button:focus {
+  outline: none;
+}
+
+.Toolbar__user {
+  color: #d5d0ce;
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 1px;
+}
+.Terminal__body {
+  background: rgba(56, 4, 40, .9);
+  height: calc(100% - 25px);
+  margin-top: -1px;
+  padding-top: 2px;
+  font-family: 'Ubuntu mono';
+}
+.Notebook__text {
+  color: #ddd;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+.Profile__text {
+  color: #ddd;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.Terminal__Prompt {
+  margin-top: 10px;
+  display: flex;
+}
+
+.Terminal__Feedback {
+  margin-top: 10px;
+  display: block;
+}
+
+.Notebook__Prompt {
+  margin-top: 10px;
+  display: block;
+}
+
+.Prompt__user {
+  margin-left: 10px;
+  color: #87d441;
+}
+.Prompt__location {
+  color: #6d85a9;
+}
+.Prompt__comment {
+  margin-left: 10px;
+  color: #8a8a8a;
+}
+.Prompt__dollar {
+  color: #ddd;
+}
+.Prompt__error {
+  margin-left: 10px;
+  color: #b61e1e;
+}
+.Prompt__success {
+  margin-left: 10px;
+  color: #1ea4b6;
+}
+
+.rainbow-text { 
+  color: hsl(
+    calc(360deg * var(--char-percent)
+    ), 
+    90%, 
+    65%
+  );
+}
+
+.rainbow-text.animated .char {
+  animation: rainbow-colors 2s linear infinite;
+  animation-delay: calc(-2s * var(--char-percent));
+}
+
+.rainbow-text.animated {
+  animation: rainbow-colors 2s linear infinite;
+  animation-delay: calc(-2s * var(--char-percent));
+}
+
+@keyframes rainbow-colors {
+  0% { color: hsl(0turn, 90%, 65%); }
+  25% { color: hsl(.25turn, 90%, 65%); }
+  50% { color: hsl(.5turn, 90%, 65%); }
+  75% { color: hsl(.75turn, 90%, 65%); }
+  100% { color: hsl(1turn, 90%, 65%); }
+}
+
+.Prompt__cursor {
+  height: 17px;
+  width: 8px;
+  background: white;
+  display: block;
+  animation: 2000ms ease infinite alternate blink;
+}
+
+#Prompt__line {
+  font-family: 'Ubuntu mono';
+  font-size: 16px;
+
+  max-height: 17px;
+  height: 17px;
+  max-width: 350px;
+  width: 10px;
+
+  margin-left: 5px;
+  background-color: transparent;
+  color: #eee;
+  border: none;
+  outline: none;
+  resize: none;
+  white-space: nowrap;
+
+  display: block;
+  overflow: hidden;
+  caret-color: transparent;
+}
+
+.status-img{
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .Terminal {
+    max-height: 90%;
+    width: 95%;
+  }
+}
+
+@keyframes bootText {
+  0% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+#loading{
+  transition: 1s;
+}
+
+@keyframes container {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.resizer {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  opacity: 0;
+  resize: both;
+}
+
+.wrap {
+  width: min-content;
+  position: relative;
+}
+
+.profile-banner-container {
+  position: relative;
+  width: 96%;
+  height: 90%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+#banner-image {
+  top: 50%;
+  left: 50%; 
+  height: 100%; 
+  width: 100%;
+}
+
+#profile-picture {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  box-shadow: 0 0 15px #000000;
+}
+
+.Profile__nick{
+  position: absolute;
+  bottom: 10px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  color: white; 
+  font-size: 20px;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px #000000;
+  padding: 5px; 
+  border-radius: 5px; 
+}
+
+.submitted_tasks{
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+.task {
+  background-color: #2a2a2d; /* Sfondo scuro */
+  border: 1px solid #444; /* Bordo sottile per distinguere i task */
+  padding: 10px;
+  margin-top: 10px;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  height: 30px; 
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.task:hover{
+  cursor: pointer;
+}
+
+.task-title{
+  margin: 0;
+  padding-left: 10px;
+  color: #f8f8f2;
+  font-size: 16px; 
+}
+
+.task-stars {
+  margin: 0;
+  color: #ffa500; 
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.task {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px); /* Sposta leggermente verso l'alto il task */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Ombra più profonda al passaggio del mouse */
+}
+
+#leaderboard{
+  padding-top: 10px;
+}
+
+#leaderboard .user-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  font-size: 20px;
+  text-shadow: 0px 0px 10px #000000;
+  color: #fff;
+}
+
+#leaderboard .column {
+  padding: 0 15px;  
+}
+
+#leaderboard .pos-col {
+  flex: 0 0 30px;
+  text-align: center; 
+}
+
+#leaderboard .image-col {
+  flex: 0 0 50px;
+}
+
+#leaderboard .nick-col {
+  flex: 0 0 200px;
+  text-align: center; 
+}
+
+#leaderboard .points-col {
+  flex: 0 0 50px;
+  text-align: center; 
+}
+
+#leaderboard .user-entry img {
+  width: 100%; /* Permette all'immagine di riempire completamente la colonna dell'immagine */
+  height: auto;
+  max-height: 50px; /* Imposta un'altezza massima per le immagini */
+  border-radius: 50%; /* Rendi le immagini rotonde */
+}
+

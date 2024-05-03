@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@font-face {
+    font-family: LemonMilk;
+    src:url("../fonts/SourceCodePro-Regular.ttf");
+}
+
+@media screen and (orientation: portrait), (max-width: 1700px) {
+    #superContainer{
+        display: none; 
+    }
+}
+
+#hiddenText{
+    color: white;
+    font-family: 'Ubuntu';
+    position: absolute;
+    text-align: center;
+    font-size: 24px;
+    z-index: -1;
+}
+html, body {
+    max-height: 100%;
+    margin: 0;
+    background: #444;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+}
+
+ .container {
+    display: flex;
+    padding-top: 5px; 
+    box-sizing: border-box; 
+    width: 100%;
+ }
+
+ .left {
+    user-select: none;
+    background: white;
+    min-width: 520px;
+    overflow-y: scroll;
+ }
+
+ .right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 860px;
+    position: relative;
+    max-height: 85vh;
+}
+
+.code-container{
+    max-height: 100%;
+}
+
+ .resize {
+    background: #444;
+    height: 100%;
+    width: 10px;
+    cursor: col-resize;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+ }
+
+.console-container {
+    height: 300px; 
+    background-color: black;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+}
+
+.console-container p {
+    font-family: LemonMilk;
+}
+
+
+.console-content {
+    display: flex; /* Abilita Flexbox per disporre i figli orizzontalmente */
+    height: calc(100% - 60px); /* Adegua in base all'altezza della tua barra inferiore */
+}
+
+.console-input, .console-output {
+    overflow: auto;
+    color: white; /* Per visualizzare il testo, se necessario */
+}
+
+.console-input {
+    padding-left: 54px;
+    border-right: 2px solid rgb(122, 122, 122);
+    flex: 1; /* Occupa 1/3 dello spazio disponibile (puoi aggiustare questi valori) */
+}
+
+#userInput{
+    height: 180px;
+}
+
+#userOutput{
+    height: 180px;
+}
+
+.console-output {
+    padding-left: 17px;
+    flex: 1; /* Occupa 2/3 dello spazio disponibile */
+}
+
+.console-input textarea,
+.console-output textarea {
+    width: 100%; /* Fai occupare al textarea l'intera larghezza del suo contenitore */
+    height: 100%; /* Allo stesso modo, fai occupare al textarea l'intera altezza del suo contenitore */
+    resize: none; /* Impedisci che l'area di testo sia ridimensionabile */
+    background-color: transparent; /* Sfondo trasparente */
+    color: white; /* Colore del testo */
+    border: none; /* Nessun bordo */
+    outline: none; /* Rimuovi l'outline per evitare bordi quando è in focus */
+    padding: 0; /* Rimuovi il padding se presente */
+    overflow-y: auto; /* Permetti lo scroll verticale */
+    overflow-x: hidden; /* Nascondi lo scroll orizzontale */
+    white-space: pre-wrap; /* A capo automatico a fine riga */
+    word-wrap: break-word;
+}
+
+.console-output textarea {
+    pointer-events: none; /* Disabilita l'interazione (incluso il focus) */
+}
+
+#editor {
+    margin: 0;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+}
+
+#divInFondo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #232323;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+}
+
+#divInFondo button {
+    display: flex;
+    align-items: center; /* Questo assicura che il testo e l'immagine siano allineati verticalmente */
+    justify-content: center; /* Questo centra gli elementi orizzontalmente all'interno del bottone */
+    border: none;
+    background-color: #007bff; /* o qualsiasi altro colore di sfondo che preferisci */
+    color: white; /* colore del testo */
+    padding: 5px 10px; /* Aggiungi un po' di padding intorno al testo e all'immagine */
+    border-radius: 5px; /* Per bordi arrotondati, se desiderato */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse per indicare che è un bottone cliccabile */
+    font-size: 16px; /* o la dimensione del testo che preferisci */
+}
+
+#titolo{
+    font-family: 'Ubuntu';
+    padding-left: 10px;
+  }
+
+  #content {
+	padding: 16px;
+	outline: none;
+	overflow: auto;
+}
+
+.btn-img {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    z-index: 99;
+}
+
+.console-line {
+    font-family: LemonMilk, sans-serif;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+        0px   1px 0 #000,
+        1px   0px 0 #000,
+        0px  -1px 0 #000,
+       -1px   0px 0 #000;
+}
+
+.gruppo {
+    width: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+    border: solid inset 2px;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 70px 0 0 0;
+  color: #EF8354;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+/* Layout Styling */
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0 150px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+    display: block;
+    height: 40px;
+    border: 2px solid #ffffff;
+    background: rgba(56, 4, 40, .9);
+    margin-bottom: 15px;
+    margin-top: 10px;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 150px;
+    text-align: center; 
+    line-height: 40px; 
+}
+
+a {
+  color: #eee;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  justify-content: center;
+  font-family: 'Ubuntu';
+}
+
+.button-4 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.1s;
+  }
+
+  .button-4:active {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #444;
+  }
+  
+  .button-4 a {
+    position: relative;
+    transition: all .45s ease-Out;
+    letter-spacing: 4px;
+  }
+  
+  .underline {
+    width: 100%;
+    height: 2.5px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -700px;
+    background: #ffffff;
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+  }
+  
+  .button-4:hover .underline {
+    left: 0;
+  }
+
+@media screen and (min-width:1000px) {
+  h1 {
+    font-size: 2.2em;
+  }
+    .gruppo {
+        width: 75%;
+    }
+}

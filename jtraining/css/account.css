@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html {
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+    background: linear-gradient(45deg, #57003f 0%,#f57453 100%);
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu';
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+.profile-banner-container {
+    position: relative;
+    text-align: center;
+}
+
+.profile-info-container {
+    display: flex;
+    flex-direction: column; /* Imposta gli elementi in una colonna verticale */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    position: absolute;
+    bottom: 0px; 
+    left: 28%; /* Modificato per centrare correttamente sotto l'immagine */
+    transform: translateX(-50%);/* Modificato per centrare sotto l'immagine */
+    z-index: 2; /* Assicurati che sia sopra l'immagine del banner */
+}
+
+#profile-picture {
+    width: 250px; /* Dimensione fissa per la foto profilo */
+    height: 250px;
+    border-radius: 50%; /* Rendi l'immagine rotonda */
+    margin-bottom: 10px; /* Spazio tra l'immagine e il nickname */
+    box-shadow: 0 0px 20px rgba(0,0,0,1); /* Ombra per risaltare la foto */
+}
+
+.Profile__nick {
+    color: white; 
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 5px 20px; /* Aggiustato padding per il testo */
+    box-shadow: 0 0 25px #000000;
+}
+
+#banner-image {
+    padding: 15px;
+    height: 400px; 
+    width: auto;
+    max-width: 1600px;
+}
+
+.Profile {
+    width: auto;
+    height: auto;
+    box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+    position: absolute;
+    z-index: -1;
+  }
+
+  #Profile__Toolbar {
+    cursor: move; 
+    background: linear-gradient(#504b45 0%,#3c3b37 100%);
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  #pcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    width: 600px;
+    height: 250px;
+    z-index: 0;
+  }
+
+  .globe-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0px;
+}
+
+#globe {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+#global-rank {
+    position: absolute;
+    color: white; 
+    font-size: 45px;
+    padding: 3px;
+    text-shadow: 2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000000, 0px 0px 15px #000000;
+    z-index: 10px;
+    left: 60%;
+    margin-bottom: 10px;
+}
+
+.rainbow-text { 
+    color: hsl(
+      calc(360deg * var(--char-percent)
+      ), 
+      90%, 
+      65%
+    );
+  }
+  
+  .rainbow-text.animated .char {
+    animation: rainbow-colors 2s linear infinite;
+    animation-delay: calc(-2s * var(--char-percent));
+  }
+  
+  .rainbow-text.animated {
+    animation: rainbow-colors 2s linear infinite;
+    animation-delay: calc(-2s * var(--char-percent));
+  }
+  
+  @keyframes rainbow-colors {
+    0% { color: hsl(0turn, 90%, 65%); }
+    25% { color: hsl(.25turn, 90%, 65%); }
+    50% { color: hsl(.5turn, 90%, 65%); }
+    75% { color: hsl(.75turn, 90%, 65%); }
+    100% { color: hsl(1turn, 90%, 65%); }
+  }
