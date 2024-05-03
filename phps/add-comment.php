@@ -10,43 +10,39 @@ $username = "root";
 $password = "";
 
 
-
-
+echo '<input type="hidden" name="id" value="'.$_POST["game_id"].'">';
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM giochi WHERE nome='".$_POST["name"]."' AND mail_editore='".$_SESSION["mail"]."' ";
-    $res = $conn->query($sql) ->fetchAll();
-    if(count($res)==0){
-        $query = "INSERT INTO commenti SET game_id=:game_id mail_utente=:mail_utente titolo=:titolo commento=:commento valutazione=:valutazione"; 
-    	$stmt = $conn->prepare($query);  
-    	
-		$game_id = htmlspecialchars(strip_tags($_POST["game_id"]));
-    	$stmt->bindParam(":game_id",   $game_id);	
-		$mail = htmlspecialchars(strip_tags($_SESSION["mail"]));
-    	$stmt->bindParam(":mail_utente",   $mail);	
-		$titolo = htmlspecialchars(strip_tags($_POST["titolo"]));
-    	$stmt->bindParam(":titolo",   $titolo);	
-		$commento = htmlspecialchars(strip_tags($_POST["commento"]));
-    	$stmt->bindParam(":commento",   $commento);	
-		$valutazione = htmlspecialchars(strip_tags($_POST["valutazione"]));
-    	$stmt->bindParam(":valutazione",   $valutazione);	
-    	
-        
-        if($stmt->execute()){
-            echo '<input type="hidden" name="result" value="ok-added">';
-        }else{
-            echo '<input type="hidden" name="result" value="no-boh">';
-        }
-        
+    
+    $query = "INSERT INTO commenti SET game_id=:game_id, mail_utente=:mail_utente, titolo=:titolo, commento=:commento, valutazione=:valutazione"; 
+    $stmt = $conn->prepare($query);  
+    
+	$game_id = htmlspecialchars(strip_tags($_POST["game_id"]));
+    $stmt->bindParam(":game_id",   $game_id);	
+	$mail = htmlspecialchars(strip_tags($_SESSION["mail"]));
+    $stmt->bindParam(":mail_utente",   $mail);	
+	$titolo = htmlspecialchars(strip_tags($_POST["titolo"]));
+    $stmt->bindParam(":titolo",   $titolo);	
+	$commento = htmlspecialchars(strip_tags($_POST["commento"]));
+    $stmt->bindParam(":commento",   $commento);	
+	$valutazione = htmlspecialchars(strip_tags($_POST["valutazione"]));
+    $stmt->bindParam(":valutazione",   $valutazione);	
+    
+    
+    if($stmt->execute()){
+        echo "si";
+        echo '<input type="hidden" name="result" value="ok-added">';
     }else{
-        echo "non aggiunto";
-        echo '<input type="hidden" name="result" value="no-name">';
+        echo "no";
+        echo '<input type="hidden" name="result" value="no-boh">';
     }
 
-} catch(PDOException $e) {}
+} catch(PDOException $e) {
+    echo "errore";
+}
 
 ?>
 

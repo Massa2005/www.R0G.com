@@ -103,8 +103,8 @@ input{
     border-radius: 10px;
     padding: 0px 0px 0px 30px;
     outline: none;
-
 }
+
 .inputForField{
     height: 50;
     width: 400;
@@ -115,6 +115,7 @@ input{
     padding: 0px 0px 0px 30px;
     outline: none;
 }
+
 .Loginbutton{
     height: 50px;
     width: 150px;
@@ -303,6 +304,11 @@ input{
     border-radius: 10px;
     border-width: 0px;
 }
+#buy-button:hover{
+    box-shadow: inset 5px 5px 4px -3px #0000005b;
+    padding: 5px 0px 0px 5px;
+    outline: none;
+}
 #addGameButt{
     position: absolute;
     top: -100px;
@@ -320,4 +326,35 @@ input{
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 23%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);
     color: black;
     border-width: 0px;
+}
+#add-comment-div{
+    background-color: rgb(83, 83, 83);
+    padding: 10px 10px 10px 10px;
+    box-shadow: inset 8px 10px 28px -16px #000000;
+}
+
+#commento{
+
+    width: 600px;
+    height: 200px;
+}
+
+#valutazione{
+    width: 70px;
+
+}
+.commentThing{
+    background-color: rgb(156, 156, 156);
+    font-size: large;
+    padding: 4px 10px 4px 10px;
+    border-radius: 0px;
+    border-width: 0px;
+}
+.commentThing:focus{
+    box-shadow: inset 5px 5px 4px -3px #0000005b;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #000000;
+    outline: none;
 }

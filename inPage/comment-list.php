@@ -20,20 +20,16 @@
         for ($i = count($res)-1; $i>=0;$i--) {
             $item = $res[$i];
             /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
-            echo '<form action="dev-game_page.php" method="post">
+            echo '
             
             <input type="hidden" name="id" value="'.$item["id"].'">
-            <button id="ciao" class="center">
-            <div class=" gameListElement colorOfInpageElement">
-            <div class="center nameofthegameongamelist">'.$item["titolo"].'</div>
+            
+            <div >
+            <div class="center">'.$item["titolo"].'</div>
             ';
-            
-            
-
             echo '
-            <div class="descriptionOnList">'.$item["valutazione"].'</div>
-            </div></button>
-        </form>';
+            <div >'.$item["valutazione"].'</div>
+            </div>';
         }
     
         
@@ -54,6 +50,3 @@
     <div class="descriptionOnList" >description</div>
 </div>
 -->
-<button id="addGameButt">
-    ADD COMMENT
-</button>
