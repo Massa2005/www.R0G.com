@@ -52,7 +52,7 @@
         
     <div id="header">
         <a href="../index.php">
-            <img src="/sources/Logo.png" id="logo">
+            <img src="../sources/Logo.png" id="logo">
         </a>
         <div class="center" style="width:fit-content; top: 110px">
             <div id="register" class="rowButton rightFont">

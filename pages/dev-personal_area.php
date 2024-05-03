@@ -10,7 +10,7 @@
     ?>
     <div id="header">
         <a href="../index.php">
-            <img src="/sources/Logo.png" id="logo">
+            <img src="../sources/Logo.png" id="logo">
         </a>
         <div class="center rightFont" id="searchdiv">
             <input type="text" id="searchbar" placeholder="search">
