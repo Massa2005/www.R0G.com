@@ -1,0 +1,8 @@
+{
+    "name": "website pages",
+    "userpages": ["account.php", "taskcreator.php", "sandbox.php", "homepage.php"],
+    "adminpages": ["insertProducts.php", "insertShops.php", "refunds.php"],
+    "loggedInPages": ["account.php", "taskcreator.php", "sandbox.php", "homepage.php"],
+    "taskpages": ["tasksolver.php"],
+    "DBPages": ["login.php"]
+}

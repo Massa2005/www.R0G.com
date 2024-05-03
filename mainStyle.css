@@ -6,8 +6,24 @@
     font-family: myFontMoreThicker;
     src: url(/fonts/Ubuntu/Ubuntu-Medium.ttf);
 }
+@keyframes listElementHover{
+    from{
+        width: 1000;
+    }
+    to{
+        width: 1020;
+    }
+}
+@keyframes listElementDishover{
+    from{
+        width: 1020;
+    }
+    to{
+        width: 1000;
+    }
+}
 body{
-    background-color: rgb(79, 84, 93);
+    background-color: rgb(255, 255, 255);
     height: 100%;
 }
 textarea {
@@ -50,14 +66,66 @@ input{
     background-color: rgb(182, 182, 182);
 }
 .borderContainer{
+    
     position: relative;
     width: fit-content;
     height: fit-content;
-    padding: 15px 15px 15px 15px;
+    padding: 150px 150px 200px 150px;
+    
     border-style: solid;
     border-radius: 5px;
-    border-color: rgb(34, 34, 34);
-    border-width: 1px;
+    border-color:rgba(239,46,126,255);
+    box-shadow:0px 0px 10px 1px rgba(239,46,126,255);
+    border-width: 5px;
+}
+.borderContainer:hover{
+    animation: forwards;
+    animation-name: ingrandimentoBoxShadow;
+    animation-duration: 1s;
+    
+   
+    
+}
+@keyframes ingrandimentoBoxShadow {
+    0%{
+        box-shadow:0px 0px 10px 1px rgba(239,46,126,255);
+    }
+    100%{
+        box-shadow:0px 0px 20px 10px rgba(239,46,126,255);
+    }
+}
+#mail{
+    height: 50;
+    width: 400;
+    font-size: 25;
+    border: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 0px 0px 0px 30px;
+    outline: none;
+
+}
+.inputForField{
+    height: 50;
+    width: 400;
+    font-size: 25;
+    border: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 0px 0px 0px 30px;
+    outline: none;
+}
+.Loginbutton{
+    height: 50px;
+    width: 150px;
+    border: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    border-color: rgba(239,46,126,255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+    font-size: 20px;
 }
 #footer{
     position: relative;
@@ -69,13 +137,22 @@ input{
     margin-top: 170px;
 }
 .gameListElement{
+    animation: forwards;
+    animation-name: listElementDishover;
+    animation-duration: 0.2s;
+
     padding: 10px 10px 10px 10px;
-    
     height: 250;
     width: 1000;
-    margin: 10px 0px 10px 0px;
     border-radius: 20px;
 }
+.gameListElement:hover{
+    animation: forwards;
+    animation-name: listElementHover;
+    animation-duration: 0.2s;
+}
+
+
 .imageOnList{
     position: absolute;
     left: 35px;
@@ -91,6 +168,7 @@ input{
     background-color: rgba(112, 82, 38, 0.174);
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
+    margin: 0px 30px 0px 0px;
 }
 #searchdiv{
     position: absolute;
@@ -140,8 +218,13 @@ input{
 .colorOfInpageElement{
     background-color: rgba(0, 0, 0, 0.450);
     backdrop-filter: blur(50px);
-    box-shadow:0px 0px 100px 10px black;
+    box-shadow:0px 0px 10px 1px rgba(0, 0, 0, 60%);
 }
+.shadowOfListElement{
+    background-color: rgba(0, 0, 0, 0.450);
+    box-shadow:5px 5px 10px 1px rgba(0, 0, 0, 60%);
+}
+
 
 #dev-LogoGioco{
     position: relative;
@@ -157,7 +240,11 @@ input{
 }
 .rightFont{
     font-family: myFont;
-    color: white;
+    color: rgb(0, 0, 0);
+}
+.rightFontLogginANDRegister{
+    font-family: myFont;
+    color: rgb(255, 255, 255);
 }
 .rightFontBlack{
     font-family: myFont;
@@ -214,5 +301,23 @@ input{
     font-family: myFontMoreThicker;
     border-color: rgba(240, 248, 255, 0);
     border-radius: 10px;
+    border-width: 0px;
+}
+#addGameButt{
+    position: absolute;
+    top: -100px;
+    height: 50px;
+    width: 100px;
+    left: 70% ;
+    background-color: black;
+    color: white;
+
+    border-style: solid;
+    border-radius: 10px;
+    outline: none;
+}
+#addGameButt:hover{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 23%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);
+    color: black;
     border-width: 0px;
 }
