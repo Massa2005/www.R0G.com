@@ -337,11 +337,24 @@ input{
 
     width: 600px;
     height: 200px;
+    
 }
-
+.commento{
+    width: 800px;
+    padding: 10px 10px 10px 10px;
+    margin: 15px 0px 15px 0px;
+}
+.com-destra{
+    position: absolute;
+    top: 0px;
+    left: 600px;
+    width: 200px;
+}
+.com-sinistra{
+    width: 600px;
+}
 #valutazione{
     width: 70px;
-
 }
 .commentThing{
     background-color: rgb(156, 156, 156);

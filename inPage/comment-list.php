@@ -1,3 +1,4 @@
+
 <?php
     session_start();
     $servername = "localhost";
@@ -20,16 +21,16 @@
         for ($i = count($res)-1; $i>=0;$i--) {
             $item = $res[$i];
             /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
-            echo '
-            
-            <input type="hidden" name="id" value="'.$item["id"].'">
-            
-            <div >
-            <div class="center">'.$item["titolo"].'</div>
-            ';
-            echo '
-            <div >'.$item["valutazione"].'</div>
-            </div>';
+            echo '<div class="center commento" style="background-color:gray;">
+            <div class="com-sinistra" style="">
+                <h1 class="center" style="width:100%; text-align:center;"> '.$item["titolo"].'</h1>
+                <div class="center">'.$item["commento"].'</div>
+            </div>
+            <div class="com-destra" style="">
+                <div >'.$item["mail_utente"].'</div>
+                <h2 class="center">'.$item["valutazione"].'</h2>
+            </div>
+        </div>';
         }
     
         
@@ -41,7 +42,6 @@
 
 
 ?>
-        
         
 <!--
 <div class="center gameListElement">
