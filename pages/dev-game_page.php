@@ -3,6 +3,8 @@
     session_start();
     echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
     echo '<input type="hidden" id="in-id" value="'.$_POST["id"].'">';
+    echo '<input type="hidden" id="in-dev" value="'.$_SESSION["dev"].'">';
+    echo '<input type="hidden" id="in-mail" value="'.$_SESSION["mail"].'">';
     $_SESSION["game_id"] = $_POST["id"];
     $servername = "localhost";
     $username = "root";
@@ -137,11 +139,17 @@
 <script>
     let idin = document.getElementById("in-id");
     let id = document.getElementById("id");
+    let dev = document.getElementById("in-dev");
+    let mail = document.getElementById("in-mail");
     let game_id = document.getElementById("game_id");
     let commenti = document.getElementById("dev-valutazione-Gioco");
     
     id.value = idin.value;
     game_id.value = idin.value;
+
+    if(mail.value == "" || dev.value == "true"){
+        document.getElementById("add-comment-div").innerHTML = "DEVI FARE UN LOGIN VALIDO";
+    }
     
     fetch("../inPage/comment-list.php").then(data => data.text()).then(html => commenti.innerHTML = html);
 
