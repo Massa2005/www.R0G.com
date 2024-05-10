@@ -13,11 +13,15 @@
         echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
 
     ?>
+    <a href="../index.php">
+            <img src="../sources/Logo.png" id="logo">
+        </a>
+        
 
     <div class="borderContainer center" style="width: fit-content; top:100px;">
         <form action="../phps/login.php" method="POST">
             <div class="center rightFontLogginANDRegister" style="width: fit-content;font-size:30px;color: white;">Mail</div>
-            <input type="text" name="mail" class="center inputForField"><br><br>
+            <input type="text" id="mail" name="mail" class="center inputForField"><br><br>
             <div class="center" id="error2" style="width: fit-content; color:red;"></div>
 
             <div class="center rightFontLogginANDRegister"  style="width: fit-content;font-size:30px;">Password</div>
@@ -43,6 +47,7 @@
     error2.innerHTML = "";
 
     mail.value = inmail.value;
+
     if(res.value == "ok"){
         window.location.href="../index.php";
     }else if(res.value == "no1"){

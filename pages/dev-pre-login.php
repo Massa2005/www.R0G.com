@@ -7,7 +7,9 @@
         echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
 
     ?>
-
+    <a href="../index.php">
+        <img src="../sources/Logo.png" id="logo">
+    </a>
     <div class="borderContainer center" style="top:250px">
         <form action="../phps/dev-login.php" method="POST">
             <div class="center rightFont" style="width: fit-content;font-size:30px;">Mail</div>
