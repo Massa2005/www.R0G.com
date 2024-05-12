@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="mainStyle.css">
 <html>
     <?php
-        ini_set('display_errors','Off');
+        ini_set('display_errors','On');
         session_start();
         echo '<input type="hidden" id="in-mail" value="'.$_SESSION["mail"].'">';
         echo '<input type="hidden" id="in-dev" value="'.$_SESSION["dev"].'">';
@@ -32,8 +32,40 @@
             </div>
         </div>
     </div>
-    <div id="content" style="position:relative; top:160px">
+    <div id="content" style="position:relative; top:250px">
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            
+            
+            try {
+                $conn = new PDO("mysql:host=$servername;dbname=rogdb", $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                
+                $sql = "SELECT * FROM giochi ORDER BY id DESC LIMIT 36";
+                
+                
+                $res = $conn->query($sql)->fetchAll();
+                
 
+                //riordina in ordine di ricerca l array res
+                for ($i = count($res)-1; $i>=0;$i--) {
+                    $item = $res[$i];
+                    /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
+                    echo '<div class="main-list-element" >
+                        <img src="sources/'. $item["main_img"].'"  class="img-main-list center">
+                        '.$item["nome"].'
+                    </div>';
+                }
+            
+                
+            } catch(PDOException $e) {echo "errore";}
+
+
+        ?>
+        <div style="height:5000px;"></div>
     </div>
 
     

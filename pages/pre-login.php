@@ -14,11 +14,15 @@
 
     ?>
     <a href="../index.php">
-            <img src="../sources/Logo.png" id="logo">
+            <img src="../sources/Logo.png" id="logo" style="height:250px; width: 500px; left: -30px;top:50px;">
         </a>
+    
         
 
     <div class="borderContainer center" style="width: fit-content; top:100px;">
+    <div class="center rightFontLogginANDRegister" style="color:rgba(239,49,128,255);font-size:50px;top:-50px;text-shadow: 0px 0px 20px rgba(239,49,128,255)">
+        Benvenuto Utente
+    </div>
         <form action="../phps/login.php" method="POST">
             <div class="center rightFontLogginANDRegister" style="width: fit-content;font-size:30px;color: white;">Mail</div>
             <input type="text" id="mail" name="mail" class="center inputForField"><br><br>
@@ -30,11 +34,9 @@
             <input type="submit" value="Login" class="center Loginbutton" >
             
         </form>
-        <a href="pre-register.php" class="center" style="left: 110px;top: 40px;">you haven't registered yet?</a>
+        <a href="pre-register.php" class="center" style="left: 70px;top: 40px;font-size:25px;">you haven't registered yet?</a>
     </div>
-    <div class="center" style="top:250px">
-        
-    </div>
+    
     
 </html>
 <script>

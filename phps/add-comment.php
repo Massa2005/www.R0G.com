@@ -18,7 +18,7 @@ try {
 
     
     $query = "INSERT INTO commenti SET game_id=:game_id, mail_utente=:mail_utente, titolo=:titolo, commento=:commento, valutazione=:valutazione"; 
-    $stmt = $conn->prepare($query);  
+    $stmt = $conn->prepare($query);
     
 	$game_id = htmlspecialchars(strip_tags($_POST["game_id"]));
     $stmt->bindParam(":game_id",   $game_id);	

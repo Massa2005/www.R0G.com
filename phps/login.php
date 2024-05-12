@@ -16,7 +16,7 @@ try {
     
     if(count($res)>0){
         if($_POST["password"] == $res[0]["password"]){
-            echo "ok apposto";
+            echo "ok";
             $_SESSION["mail"]=$_POST["mail"];
             $_SESSION["name"]=$res[0]["nome"];
             $_SESSION["dev"]="false";
