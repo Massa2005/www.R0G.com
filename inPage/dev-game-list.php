@@ -1,10 +1,15 @@
 
-<h1>
-    
-</h1>
 
 
-<div style="font-size:40px; position: absolute;top:-100px ; color:white;" class="center">
+
+<style>
+    body{
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(118,86,200,1) 0%, rgba(0,194,255,1) 100%);
+    }
+</style>
+
+
+<div style="font-size:40px; position: absolute;top:-100px ; color:white;" class="center rightFont">
     Lista dei giochi
 </div>
 
@@ -37,8 +42,8 @@
             
             <input type="hidden" name="id" value="'.$item["id"].'">
             <button id="ciao" class="center">
-            <div class=" gameListElement colorOfInpageElement">
-            <div class="center nameofthegameongamelist">'.$item["nome"].'</div>
+            <div class="gameListElement colorOfInpageElement">
+            <div class="center nameofthegameongamelist rightFont">'.$item["nome"].'</div>
             ';
 
             if($item["main_img"] != "x" && $item["main_img"] != ""){
@@ -48,7 +53,7 @@
             }
 
             echo '
-            <div class="descriptionOnList">'.$item["descrizione"].'</div>
+            <div class="descriptionOnList rightFont">'.$item["descrizione"].'</div>
             </div></button>
         </form>';
         }

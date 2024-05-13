@@ -1,4 +1,9 @@
 <link rel="stylesheet" href="mainStyle.css">
+<style>
+    body{
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(118,86,200,1) 0%, rgba(0,194,255,1) 100%);
+    }
+</style>
 <html>
     <?php
         ini_set('display_errors','On');
@@ -54,10 +59,20 @@
                 for ($i = count($res)-1; $i>=0;$i--) {
                     $item = $res[$i];
                     /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
-                    echo '<div class="main-list-element" >
-                        <img src="sources/'. $item["main_img"].'"  class="img-main-list center">
-                        '.$item["nome"].'
-                    </div>';
+                    echo '<div class="main-list-element">
+                        <img src="sources/'. $item["main_img"].'"  class="main-list-img">
+                        <div class="center main-list-name rightFontBlack">'.$item["nome"].'</div>';
+                    if($item["sconto"] != 0){
+                        $scontato = $item["prezzo"] - ($item["prezzo"] * $item["sconto"] / 100);
+
+                        echo '<div style="background-color:rgb(39, 207, 39);padding: 0px 7px 0px 7px" class="center">
+                            <div class="center rightFontBlack" style="font-size:40;">'.$scontato.'€</div>
+                            <div style="text-decoration: line-through;"> '.$item["prezzo"].'€</div>
+                        </div>';
+                    }else{
+                        echo '<div class="center rightFontBlack" style="font-size:40;">'.$item["prezzo"].'€</div>';
+                    }
+                    echo '</div>';
                 }
             
                 

@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="../mainStyle.css">
+<style>
+    body{
+        background-color:black;
+        overflow-y:hidden;
+    }
+</style>
 <html>
     <?php
         ini_set('display_errors','Off');
@@ -8,28 +14,31 @@
         echo '<input type="hidden" id="mailin" value="'.$_POST["mail"].'">';
         echo '<input type="hidden" id="passwordin" value="'.$_POST["password"].'">';
     ?>
+    <a href="../index.php">
+            <img src="../sources/Logo.png" id="logo" style="height:250px; width: 500px; left: -30px;top:50px;">
+        </a>
 
-    <div class="borderContainer center" style="width: fit-content; top:200px">
+    <div class="borderContainer center" style="width: fit-content; top:20px; padding: 100px 100px 125px 100px;">
         <form action="../phps/dev-register.php" id="form" method="POST">
-            <div class="center rightFont" style="width: fit-content; font-size:30px;">Mail</div>
+            <div class="center rightFontLogginANDRegister" style="width: fit-content;font-size:30px">Mail</div>
             <input type="text" id="mail" name="mail" class="center inputForField"><br><br>
             <div class="center" id="error" style="width: fit-content; color:red;"></div>
 
-            <div class="center rightFont" style="width: fit-content; font-size:30px;">Name</div>
+            <div class="center rightFontLogginANDRegister" style="width: fit-content; font-size:30px;">Name</div>
             <input type="text" id="name" name="name" class="center inputForField"><br><br>
 
-            <div class="center rightFont" style="width: fit-content; font-size:30px;">Sede</div>
+            <div class="center rightFontLogginANDRegister" style="width: fit-content; font-size:30px;">Sede</div>
             <input type="text" id="sede" name="sede" class="center inputForField"><br><br>
 
-            <div class="center rightFont"  style="width: fit-content; font-size:30px;">Password</div>
+            <div class="center rightFontLogginANDRegister"  style="width: fit-content; font-size:30px;">Password</div>
             <input type="password" id="password" name="password" class="center inputForField"><br><br>
             
 
-            <div class="center rightFont"  style="width: fit-content; font-size:30px;">Repeat password</div>
+            <div class="center rightFontLogginANDRegister"  style="width: fit-content; font-size:30px;">Repeat password</div>
             <input type="password" id="password2" name="password2" class="center inputForField"><br><br>
             <div class="center" id="error2" style="width: fit-content; color:red;"></div>
         </form>
-        <button onclick="register()" class="center rightFont Loginbutton">Register</button>
+        <button onclick="register()" class="center Loginbutton">Register</button>
     </div>
 </html>
 

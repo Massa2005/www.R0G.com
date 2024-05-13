@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="../mainStyle.css">
+<style>
+    body{
+        background-color:black;
+        overflow-y:hidden;
+    }
+</style>
 <html>
     <?php
         ini_set('display_errors','Off');
@@ -8,28 +14,30 @@
         echo '<input type="hidden" id="datein" value="'.$_POST["data"].'">';
         echo '<input type="hidden" id="costin" value="'.$_POST["cost"].'">';
     ?>
-
-    <div class="borderContainer center" style="width: fit-content; top:200px">
+<a href="../index.php">
+            <img src="../sources/Logo.png" id="logo" style="height:250px; width: 500px; left: -30px;top:50px;">
+        </a>
+    <div class="borderContainer center" style="width: fit-content; top:20px; padding: 100px 100px 125px 100px;">
         <form action="../phps/add-game.php" id="form" method="POST">
 
-            <div class="center rightFont" style="width: fit-content;">Name</div>
-            <input type="text" id="name" name="name" class="center"><br>
+            <div class="center rightFontLogginANDRegister" style="width: fit-content;font-size:30px;">Name</div>
+            <input type="text" id="name" name="name" class="center inputForField"><br>
             <div class="center" id="error" style="width: fit-content; color:red;"></div><br>
 
-            <div class="center rightFont" style="width: fit-content;">Description</div>
-            <textarea id="description" name="description" rows="6" cols="50"></textarea><br><br>
+            <div class="center rightFontLogginANDRegister" style="width: fit-content;font-size:30px;">Description</div>
+            <textarea id="description" name="description" class="rightFontLogginANDRegister" style="color:black;font-size:20px;" rows="6" cols="50"></textarea><br><br>
 
-            <div class="center rightFont"  style="width: fit-content;">prezzo</div>
-            <input type="number" id="cost" name="cost" class="center"><br><br>
+            <div class="center rightFontLogginANDRegister"  style="width: fit-content;font-size:30px;">prezzo</div>
+            <input type="number" id="cost" name="cost" class="center inputForField"><br><br>
             
-            <div class="center rightFont"  style="width: fit-content;">data pubblicazione</div>
-            <input type="date" id="date" name="date" class="center"><br><br>
+            <div class="center rightFontLogginANDRegister"  style="width: fit-content;font-size:30px;">data pubblicazione</div>
+            <input type="date" id="date" name="date" class="center inputForField"><br><br>
             <input type="hidden" name="img" id="img" value = "x">
         </form>
         <form action="" id="formimg">
             <input type="file" name="" id="inpFile">
         </form>
-        <button onclick="register()" class="center">Upload</button>
+        <button onclick="register()" class="center Loginbutton">Upload</button>
     </div>
 </html>
 
