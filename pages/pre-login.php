@@ -19,7 +19,7 @@
     
         
 
-    <div class="borderContainer center" style="width: fit-content; top:100px;">
+    <div class="borderContainer center" style="width: fit-content; top:50px;">
     <div class="center rightFontLogginANDRegister" style="color:rgba(239,49,128,255);font-size:50px;top:-50px;text-shadow: 0px 0px 20px rgba(239,49,128,255)">
         Benvenuto Utente
     </div>

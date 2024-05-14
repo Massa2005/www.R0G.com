@@ -2,3 +2,30 @@
 -  carrello fatto "ID;ID;ID;ID..."
     - pagina trolley.php
     - aggiungi, togli
+
+
+
+pagine da fare:
+
+    parte utente:
+    - pagina libreria (pagina principale);
+    - pagina personal info;
+    - carrello ( da addattare anche per essere visibile nella )
+
+
+
+    parte dev:
+    - statistics
+    - perosnal info
+    - game list (da finire gli elements perchè il testo sfora);
+    - add game da fixare la grandezza;  
+
+
+
+    pagina gioco:
+    - FIXARE IL BOTTONE;
+
+
+
+    index:
+    fare la topbar (che sarà riciclata per tutte le altre)

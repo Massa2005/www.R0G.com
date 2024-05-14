@@ -1,10 +1,7 @@
 <link rel="stylesheet" href="mainStyle.css">
 <style>
     body{
-        background: rgb(215,88,233);
-        background: linear-gradient(117deg, rgba(215,88,233,1) 0%, rgba(72,129,242,1) 51%, rgba(14,199,204,1) 100%);
-        background-repeat: repeat-y;
-        background-size: 2000px 4500px;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(118,86,200,1) 0%, rgba(0,194,255,1) 100%);
     }
 </style>
 <html>
@@ -65,9 +62,9 @@
                     echo '
                     <form action="pages/dev-game_page.php" method="post">
                     <input type="hidden" name="id" value="'.$item["id"].'">
-                    <button id="div'.$item["id"].'" class="main-list-element">
+                    <button class="main-list-element">
                     <div >
-                        <img id="img'.$item["id"].'" src="sources/'. $item["main_img"].'"  class="main-list-img" style="">
+                        <img src="sources/'. $item["main_img"].'"  class="main-list-img" style="">
                         <div class="center main-list-name rightFontBlack">'.$item["nome"].'</div>';
                     if($item["sconto"] != 0){
                         $scontato = $item["prezzo"] - ($item["prezzo"] * $item["sconto"] / 100);
@@ -79,29 +76,7 @@
                     }else{
                         echo '<div class="center rightFontBlack" style="font-size:40;">'.$item["prezzo"].'€</div>';
                     }
-                    echo '</div></button></form>
-                    <script>
-                        document.getElementById("div'.$item["id"].'").addEventListener("mouseover",
-                            (value)=>{
-                                var img = document.getElementById("img'.$item["id"].'");
-                                img.style.animation = "forwards";
-                                img.style.animationName = "ingrandimentoImmagine";
-                                img.style.animationDuration = "200ms";
-                                console.log("helo");
-                            }
-                        );        
-                        document.getElementById("div'.$item["id"].'").addEventListener("mouseout",
-                            (value)=>{
-                                var img = document.getElementById("img'.$item["id"].'");
-                                img.style.animation = "forwards";
-                                img.style.animationName = "rimpicciolimentoImmagine";
-                                img.style.animationDuration = "200ms";
-                                console.log("helo");
-                            }
-                        );                        
-                    </script>
-                    
-                    ';
+                    echo '</div></button></form>';
                 }
             
                 
@@ -109,7 +84,7 @@
 
 
         ?>
-        <div style="height:4000px;"></div>
+        <div style="height:5000px;"></div>
     </div>
 
     

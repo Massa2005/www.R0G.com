@@ -386,12 +386,22 @@ input{
 .main-list-element{
     position: relative;
     width: 261px;
-    height: 310px;
+    height: 320px;
     float: left;
     text-align: center;
     margin: 2px 2px 2px 2px;
-    background-color: #00000017;
+    border-radius: 10px;
+    background-color: #00000000;
     padding:20px 0px 0px 0px;
+    border-color: #00000000;
+    
+    
+}
+.main-list-element:hover{
+    cursor: pointer;
+    background-color: #1a2e5962;
+    box-shadow: 0px 0px 20px #1a2e5962;
+
     
 }
 .main-list-img{
@@ -399,7 +409,13 @@ input{
     height: 200px;
     width: 200px;
     object-fit:cover;
+    border-radius: 5px;
+    
+    
+    
+    
 }
+
 #content{
     position: relative;
     width: 800px;
@@ -411,4 +427,24 @@ input{
     width:fit-content;
     font-size:20;
     margin: 9px 2px 2px 2px;
+}
+@keyframes ingrandimentoImmagine {
+    from{
+        
+        transform: scale(1);
+    }
+    to{
+
+        
+        transform: scale(1.1);
+    }
+}
+@keyframes rimpicciolimentoImmagine {
+    from{
+        transform: scale(1.1);
+    }
+    to{
+
+        transform: scale(1);
+    }
 }
