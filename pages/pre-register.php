@@ -14,11 +14,14 @@
         echo '<input type="hidden" id="mailin" value="'.$_POST["mail"].'">';
         echo '<input type="hidden" id="passwordin" value="'.$_POST["password"].'">';
     ?>
+    <a href="../index.php">
+        <img src="../sources/Logo.png" id="logo" style="height:250px; width: 500px; left: -30px;top:50px;">
+    </a>
 
     <div class="borderContainer center" style="width: fit-content; top:20px; padding: 100px 100px 125px 100px;">
         <form action="../phps/register.php" id="form" method="POST">
             <div class="center rightFontLogginANDRegister" style="width: fit-content;">Mail</div>
-            <input type="text" name="mail" class="center inputForField"><br><br>
+            <input type="text" name="mail" id="mail" class="center inputForField"><br><br>
             <div class="center rightFontLogginANDRegister" id="error" style="width: fit-content; color:red;"></div>
 
             <div class="center rightFontLogginANDRegister" style="width: fit-content;">Name</div>
@@ -31,14 +34,14 @@
             <input type="date" id="date" name="date" class="center inputForField"><br><br>
 
             <div class="center rightFontLogginANDRegister"  style="width: fit-content;">Password</div>
-            <input type="password"  name="password" class="center inputForField"><br><br>
+            <input type="password"  id="password" name="password" class="center inputForField"><br><br>
             
 
             <div class="center rightFontLogginANDRegister"  style="width: fit-content;">Repeat password</div>
             <input type="password" id="password2" name="password2" class="center inputForField"><br><br>
             <div class="center rightFontLogginANDRegister " id="error2" style="width: fit-content; color:red;"></div>
         </form>
-        <button onclick="register()" class="center Loginbutton">Regiter</button>
+        <button onclick="register()" class="center Loginbutton">Register</button>
     </div>
 </html>
 
@@ -72,6 +75,7 @@
     }
 
     function register(){
+
         if(password.value == password2.value){
             document.getElementById("form").submit();
         }else{
