@@ -37,5 +37,5 @@ try {
 </form>
 
 <script>
-    //document.getElementById("form").submit();
+    document.getElementById("form").submit();
 </script>

@@ -44,7 +44,7 @@
     let gamesButton = document.getElementById("games");
     let infoButton = document.getElementById("per-info");
     let result = document.getElementById("result");
-
+    loadPage("../inPage/game-list.php");
     gamesButton.addEventListener("click",(event)=>{loadPage("../inPage/game-list.php");});
     infoButton.addEventListener("click",(event)=>{loadPage("../inPage/personal-info.php");});
 

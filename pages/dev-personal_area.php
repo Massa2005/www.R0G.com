@@ -52,7 +52,8 @@
     let insearch = document.getElementById("in-search");
 
     searchdiv.style.visibility = "hidden";
-
+    searchdiv.style.visibility = "visible";
+        loadPage("../inPage/dev-game-list.php");
     if(result.value=="ok-added"){
         loadPage("../inPage/dev-game-list.php");
     }
@@ -82,4 +83,24 @@
     function search(){
         window.location.href="dev-personal_area.php?search="+sbar.value;
     }
+    searchdiv.addEventListener("focusin", (event)=>{
+        let searchField = document.getElementById("searchbar");
+        console.log("ciao");
+        searchdiv.style.animation = "forwards";
+        searchdiv.style.animationName = "ingrandimentoBarraDiricerca";
+        searchdiv.style.animationDuration = "200ms";
+        searchField.style.animation = "forwards";
+        searchField.style.animationName = "ingrandimentoTextField";
+        searchField.style.animationDuration = "200ms";
+    });
+    searchdiv.addEventListener("focusout", (event)=>{
+        let searchField = document.getElementById("searchbar");
+        console.log("ciao");
+        searchdiv.style.animation = "forwards";
+        searchdiv.style.animationName = "rimpicciolimentoRicerca";
+        searchdiv.style.animationDuration = "200ms";
+        searchField.style.animation = "forwards";
+        searchField.style.animationName = "rimpicciolimentoField";
+        searchField.style.animationDuration = "200ms";
+    });
 </script>

@@ -30,21 +30,23 @@
                 
                 
 
-                foreach( explode(";", $_SESSION["trolley"]) as &$game){
+                if(isset($_SESSION["trolley"])){
+                    foreach( explode(";", $_SESSION["trolley"]) as &$game){
 
-                    $sql = "SELECT * FROM giochi WHERE id='".$game."'";
-                    $res = $conn->query($sql)->fetchAll();
-                    if($game != ""){
-                        echo '
-                        <div class="trolley-element">
-                            <img src="../sources/'.$res[0]["main_img"].'" class="trolley-img" >
-                            <div class="trolley-name rightFontBlack">'.$res[0]["nome"].'</div>
-                            <div class="trolley-cost rightFontBlack">'.$res[0]["prezzo"].'€</div>
-                            <form action="../phps/remove-trolley.php" method="post" class="trolley-delete">
-                            <input type="hidden" name="id" value="'.$game.'">       
-                            <button style="" id="bottonedelete" clas="rightFont">DELETE</button></form>
-                        </div>
-                        ';
+                        $sql = "SELECT * FROM giochi WHERE id='".$game."'";
+                        $res = $conn->query($sql)->fetchAll();
+                        if($game != ""){
+                            echo '
+                            <div class="trolley-element">
+                                <img src="../sources/'.$res[0]["main_img"].'" class="trolley-img" >
+                                <div class="trolley-name rightFontBlack">'.$res[0]["nome"].'</div>
+                                <div class="trolley-cost rightFontBlack">'.$res[0]["prezzo"].'€</div>
+                                <form action="../phps/remove-trolley.php" method="post" class="trolley-delete">
+                                <input type="hidden" name="id" value="'.$game.'">       
+                                <button style="" id="bottonedelete" clas="rightFont">DELETE</button></form>
+                            </div>
+                            ';
+                        }
                     }
                 }
             }catch(PDOException $e){

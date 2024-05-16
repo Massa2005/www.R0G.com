@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 16, 2024 alle 23:29
+-- Creato il: Mag 17, 2024 alle 01:32
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -76,7 +76,7 @@ INSERT INTO `editori` (`e_mail`, `nome`, `password`, `sede`) VALUES
 ('naughty.dog@naughty.dog', 'Naughty dog', 'naughty', 'Posillipo a bari'),
 ('rockstar@rock.com', 'Rockstar', 'rock', 'Los Angeles'),
 ('tencent@ten.ten', 'Tencent', 'ten', 'Gubbio'),
-('ubisoft@ubi.ubi', 'Ubisoft', 'ubi', 'New York');
+('ubisoft@ubi.ubi', 'Ubisoft', 'ubi', 'Manhattan');
 
 -- --------------------------------------------------------
 
@@ -157,15 +157,6 @@ CREATE TABLE `keys` (
   `key` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dump dei dati per la tabella `keys`
---
-
-INSERT INTO `keys` (`game_id`, `key`) VALUES
-(50, 'DWJIIJOIdoIJwdoDd12'),
-(51, 'ADWWDWWdWDwdDDW'),
-(52, 'WDddDWdwdwd13231');
-
 -- --------------------------------------------------------
 
 --
@@ -178,6 +169,13 @@ CREATE TABLE `libreria` (
   `data_acquisto` date NOT NULL DEFAULT current_timestamp(),
   `a_key` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `libreria`
+--
+
+INSERT INTO `libreria` (`mail_utente`, `game_id`, `data_acquisto`, `a_key`) VALUES
+('aaa', 52, '2024-05-17', 'WDddDWdwdwd13231');
 
 -- --------------------------------------------------------
 
@@ -268,7 +266,6 @@ ALTER TABLE `keys`
 --
 ALTER TABLE `libreria`
   ADD KEY `game_id_ref` (`game_id`),
-  ADD KEY `a_key_ref` (`a_key`),
   ADD KEY `nonrompereilcazzo_mail_key_ref` (`mail_utente`);
 
 --
@@ -339,7 +336,6 @@ ALTER TABLE `keys`
 -- Limiti per la tabella `libreria`
 --
 ALTER TABLE `libreria`
-  ADD CONSTRAINT `a_key_ref` FOREIGN KEY (`a_key`) REFERENCES `keys` (`key`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `game_ref` FOREIGN KEY (`game_id`) REFERENCES `giochi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `nonrompereilcazzo_mail_key_ref` FOREIGN KEY (`mail_utente`) REFERENCES `utenti` (`e_mail`) ON DELETE CASCADE ON UPDATE CASCADE;
 

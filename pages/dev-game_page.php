@@ -68,7 +68,7 @@
                 Game
             </div>
             <div id="log-out" class="rowButtonofGamePage rightFont">
-                Boh
+                Valutazioni
             </div>
         </div>
     </div>
@@ -120,7 +120,7 @@
                     INSERISCI UN COMMENTO
                     <input type="hidden" name="game_id" id="game_id"><br>
                     <input type="text" name="titolo" id="titolo" placeholder="TITOLO" class="center commentThing rightFontWithoutShadow" style="padding-left:20px;"><br><br>
-                    <textarea name="commento" id="commento" placeholder="COMMENTO" class="center commentThing rightFontWithoutShadow" style="padding:40px 0px 0px 40px;"></textarea><br><br>
+                    <textarea name="commento" id="commento" placeholder="COMMENTO" class="center commentThing rightFontWithoutShadow" style="padding:30px 30px 30px 30px;"></textarea><br><br>
                     <div class="center">
                     
                         <label for="valutazione">Valutazione: </label>

@@ -39,5 +39,5 @@ try {
     ';
 } catch(PDOException $e) {}
 ?>
-<input type="submit" value = "aggiorna robe" id="buttonSubmit" style="top:-100px">
+<input type="submit" value = "aggiorna informazioni" id="buttonSubmit" style="top:-100px">
 </form>
