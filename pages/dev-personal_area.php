@@ -15,7 +15,6 @@
         echo '<input type="hidden" id="in-search" value="'.$_GET["search"].'">';
         $_SESSION["searched"] = $_GET["search"];
     ?>
-    <h1 class="rightFontBlack center" style="top:20px">PERSONAL AREA</h1>
     <div id="header">
         <a href="../index.php">
             <img src="../sources/Logo.png" id="logo">
@@ -38,11 +37,6 @@
                 personal-info
             </div>
         </div>
-        <div class="center" style="" id="carrelloIcon">
-            <a href="../pages/trolley.php">
-                <img src="../sources/pngegg.png" alt="" style="height:100px;width:100px">
-            </a>
-    </div>
     </div>
     <div id="content" style="position:relative; top: 300px;">
 
@@ -53,7 +47,6 @@
     let gamesButton = document.getElementById("games");
     let searchdiv = document.getElementById("searchdiv");
     let p_infoButton = document.getElementById("personal-info");
-    let statisticsButton = document.getElementById("statistics");
     let result = document.getElementById("result");
     let sbar = document.getElementById("searchbar");
     let insearch = document.getElementById("in-search");
@@ -73,12 +66,8 @@
         searchdiv.style.visibility = "visible";
         loadPage("../inPage/dev-game-list.php");
     });
-    statisticsButton.addEventListener("click",(event)=>{
-        searchdiv.style.visibility = "visible";
-        loadPage("../inPage/dev-statistic.php");
-    });
     p_infoButton.addEventListener("click",(event)=>{
-        searchdiv.style.visibility = "visible";
+        searchdiv.style.visibility = "hidden";
         loadPage("../inPage/dev-personal-info.php");
     });
 

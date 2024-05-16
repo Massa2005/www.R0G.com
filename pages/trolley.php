@@ -40,7 +40,9 @@
                             <img src="../sources/'.$res[0]["main_img"].'" class="trolley-img" >
                             <div class="trolley-name rightFontBlack">'.$res[0]["nome"].'</div>
                             <div class="trolley-cost rightFontBlack">'.$res[0]["prezzo"].'€</div>
-                            <form action="../phps/remove-trolley.php" method="post" class="trolley-delete"><button style="" id="bottonedelete" clas="rightFont">DELETE</button></form>
+                            <form action="../phps/remove-trolley.php" method="post" class="trolley-delete">
+                            <input type="hidden" name="id" value="'.$game.'">       
+                            <button style="" id="bottonedelete" clas="rightFont">DELETE</button></form>
                         </div>
                         ';
                     }
@@ -51,7 +53,7 @@
         ?>
         <button id="buttonSubmit" class="rightFontBlack" onclick="buygames()">Procedi con l'acquisto</button>
     </div>
-    
+    <input type="hidden" name="id" value="">
     
 </html>
 <script>

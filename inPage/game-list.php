@@ -39,7 +39,7 @@
             
             echo '<form action="dev-game_page.php" method="post">
             
-            <input type="hidden" name="id" value="'.$item["id"].'">
+            <input type="hidden" name="id" value="'.$res[0]["id"].'">
             <button id="ciao" class="center">
             <div class="gameListElement colorOfInpageElement">
             <div class="center nameofthegameongamelist rightFont">'.$res[0]["nome"].'</div>

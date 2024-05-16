@@ -12,25 +12,30 @@ try {
     
 
     foreach( explode(";", $_SESSION["trolley"]) as &$game){
-        $sql = "SELECT * FROM `keys` WHERE game_id=$game";
-        $res = $conn->query($sql)->fetchAll();
-        $key = $res[0]["key"];
+        if($game != ""){
+            
+            $sql = "SELECT * FROM `keys` WHERE game_id=$game;";
+            $res = $conn->query($sql)->fetchAll();
+            $key = $res[0]["key"];
+            
+            
+            $sql = "DELETE FROM `keys` WHERE `key`='".$key."'";
 
-        $sql = "DELETE FROM `keys` WHERE `key`=".$key;
-        $res = $conn->query($sql);
-
-        $sql = "INSERT INTO `libreria`(`mail_utente`, `game_id`, `a_key`) VALUES ('".$_SESSION["mail"]."','$game','$key')";
-        $res = $conn->query($sql);
+            $res = $conn->query($sql);
+            
+            $sql = "INSERT INTO `libreria`(`mail_utente`, `game_id`, `a_key`) VALUES ('".$_SESSION["mail"]."','$game','$key')";
+            $res = $conn->query($sql);
+        }
 
     }
     
     $_SESSION["trolley"] = "";
-} catch(PDOException $e) {}
+} catch(PDOException $e) {echo "errore";}
 
 ?>
 
 </form>
 
 <script>
-    document.getElementById("form").submit();
+    //document.getElementById("form").submit();
 </script>

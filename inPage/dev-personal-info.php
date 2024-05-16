@@ -1,7 +1,5 @@
 <style>
-    body{
-        overflow-y:hidden;
-    }
+    
 </style>
 <?php
 ?>
@@ -12,12 +10,15 @@
     </div>
     <div id="contenitoreNome" class="contenitorinput rightFontBlack">
             Nome
+            <input type="text">
     </div>
     <div id="contenitorePassword" class="contenitorinput rightFontBlack">
             password
+            <input type="text">
     </div>
     <div id="contenitoreSede" class="contenitorinput rightFontBlack">
             sede
+            <input type="text">
     </div>
     
 </div>

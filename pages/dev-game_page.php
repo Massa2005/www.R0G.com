@@ -18,6 +18,9 @@
         $sql = "SELECT * FROM giochi WHERE id='".$_POST["id"]."'";
         $res = $conn->query($sql)->fetchAll();
 
+        $sql = "SELECT * FROM `keys` WHERE game_id='".$_POST["id"]."'";
+        $res1 = $conn->query($sql)->fetchAll();
+        echo '<input type="hidden" id="in-num" value="'.count($res1).'">';
     } catch(PDOException $e) {}   
 ?>
 <html>
@@ -142,12 +145,18 @@
     let id = document.getElementById("id");
     let dev = document.getElementById("in-dev");
     let mail = document.getElementById("in-mail");
+    let keys = document.getElementById("in-num");
     let game_id = document.getElementById("game_id");
     let commenti = document.getElementById("dev-valutazione-Gioco");
     
     id.value = idin.value;
     game_id.value = idin.value;
 
+    
+
+    if(keys.value == "0"){
+        document.getElementById('buy-button').innerHTML = "NO KEY";
+    }
     if(mail.value == "" || dev.value == "true"){
         document.getElementById("add-comment-div").innerHTML = "DEVI FARE UN LOGIN VALIDO";
         document.getElementById('buy-button').innerHTML = "NOPE";
@@ -157,9 +166,10 @@
     document.getElementById('buy-button').addEventListener('click', 
     function(event) {
         event.preventDefault();
-        if(dev.value == "true" || mail.value == ""){
+        if(dev.value == "true" || mail.value == "" || keys.value == "0"){
             return;
         }
+
         document.getElementById('buy-form').submit();
     });
     /*

@@ -141,8 +141,10 @@
     
     if(inmail.value== ""){
         loginButton.innerHTML = "log-in";
+        document.getElementById("carrelloIcon").innerHTML = "";
     }else if(indev.value == "true"){
         loginButton.innerHTML = "dev area";
+        document.getElementById("carrelloIcon").innerHTML = "";
     }else{
         loginButton.innerHTML = "personal area";
     }

@@ -19,7 +19,7 @@
     <a href="../index.php">
             <img src="../sources/Logo.png" id="logo">
         </a>
-
+    
         <div class="center" style="width:fit-content; top: 110px">
             <div id="games" class="rowButton rightFont">
                 Games
