@@ -17,8 +17,8 @@
                 echo '<form action="pages/dev-game_page.php" method="post">
             <input type="hidden" name="id" value="'.$item["id"].'">
             
-            <div class="center gameListElement">
-            <div class="center nameofthegameongamelist">'.$item["nome"].'</div>
+            <div class="center gameListElement colorOfInpageElement">
+            <div class="center nameofthegameongamelist rightFont">'.$item["nome"].'</div>
             <button id="ciao">';
 
             if($item["main_img"] != "x" && $item["main_img"] != ""){

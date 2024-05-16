@@ -2,7 +2,7 @@
 <style>
     body{
         background: rgb(215,88,233);
-        background: linear-gradient(117deg, rgba(215,88,233,1) 0%, rgba(72,129,242,1) 51%, rgba(14,199,204,1) 100%);
+        background: linear-gradient(117deg, rgba(14,199,204,1) 0%, rgba(72,129,242,1) 51%, rgba(215,88,233,1) 100%);
         background-repeat: repeat-y;
         background-size: 2000px 4500px;
     }
@@ -23,19 +23,19 @@
         
     
         <div class="center" id="searchdiv">
-            
-            <input type="text" id="searchbar" placeholder="search"  >
             <button onclick="search()" id="searchbutt">&nbsp;</button>
+            <input type="text" id="searchbar" placeholder="search">
+            
         </div>
         
-        <div class="center" style="width:fit-content; top: 110px">
-            <div id="register" class="rowButton rightFont">
+        <div class="center" style="width:fit-content; top: 110px" id="buttons">
+            <div id="register" class="rightFont rowButton" style="color:rgba(239,49,128,200);text-shadow: 0px 0px 5px rgba(239,49,128,255);">
                 register
             </div>
-            <div id="log-in" class="rowButton rightFont">
+            <div id="log-in" class="rowButton rightFont" style="color:rgba(239,49,128,255);text-shadow: 0px 0px 5px rgba(239,49,128,255);">
                 log-in
             </div>
-            <div id="log-out" class="rowButton rightFont">
+            <div id="log-out" class="rowButton rightFont" style="color:rgba(239,49,128,255);text-shadow: 0px 0px 5px rgba(239,49,128,255);">
                 log-out
             </div>
         </div>
@@ -59,7 +59,7 @@
                 
 
                 //riordina in ordine di ricerca l array res
-                for ($i = count($res)-1; $i>=0;$i--) {
+                for ($i = 0; $i<count($res);$i++) {
                     $item = $res[$i];
                     /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
                     echo '
