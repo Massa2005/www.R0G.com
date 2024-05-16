@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 10, 2024 alle 10:33
--- Versione del server: 10.4.25-MariaDB
--- Versione PHP: 8.1.10
+-- Creato il: Mag 16, 2024 alle 23:29
+-- Versione del server: 10.4.32-MariaDB
+-- Versione PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,17 +34,19 @@ CREATE TABLE `commenti` (
   `titolo` varchar(255) NOT NULL,
   `commento` varchar(500) NOT NULL,
   `valutazione` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `commenti`
 --
 
 INSERT INTO `commenti` (`id`, `game_id`, `mail_utente`, `titolo`, `commento`, `valutazione`) VALUES
-(3, 20, 'aaa', '', '', 5),
 (4, 20, 'aaa', 'zdbfgdxc', 'vnzxcnbxcbv', 5),
 (5, 20, 'aaa', 'vzbngyrki', 'hgfkvcm', 5),
-(7, 21, 'aaa', 'best game in the world', 'che ne so', 10);
+(7, 21, 'aaa', 'best game in the world', 'che ne so', 10),
+(8, 51, 'marco@gmail.com', 'best game in the world', 'miglior gioco dellesistenza', 10),
+(9, 51, 'marco@gmail.com', 'xhe ne so ', 'bho dco roba a caso', 5),
+(11, 52, 'marco@gmail.com', 'Gioco migliore del mondo', 'Athur morgan e un figo', 8);
 
 -- --------------------------------------------------------
 
@@ -57,7 +59,7 @@ CREATE TABLE `editori` (
   `nome` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `sede` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `editori`
@@ -92,7 +94,7 @@ CREATE TABLE `giochi` (
   `main_img` varchar(255) NOT NULL,
   `valutazione` float NOT NULL,
   `data_pubblicazione` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `giochi`
@@ -142,7 +144,7 @@ INSERT INTO `giochi` (`id`, `nome`, `descrizione`, `prezzo`, `sconto`, `mail_edi
 CREATE TABLE `immagini` (
   `game_id` int(11) NOT NULL,
   `source_img` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,16 @@ CREATE TABLE `immagini` (
 CREATE TABLE `keys` (
   `game_id` int(11) NOT NULL,
   `key` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `keys`
+--
+
+INSERT INTO `keys` (`game_id`, `key`) VALUES
+(50, 'DWJIIJOIdoIJwdoDd12'),
+(51, 'ADWWDWWdWDwdDDW'),
+(52, 'WDddDWdwdwd13231');
 
 -- --------------------------------------------------------
 
@@ -166,7 +177,7 @@ CREATE TABLE `libreria` (
   `game_id` int(11) NOT NULL,
   `data_acquisto` date NOT NULL DEFAULT current_timestamp(),
   `a_key` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -177,7 +188,7 @@ CREATE TABLE `libreria` (
 CREATE TABLE `r_tag_game` (
   `game_id` int(11) NOT NULL,
   `tag_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -187,7 +198,7 @@ CREATE TABLE `r_tag_game` (
 
 CREATE TABLE `tags` (
   `tag` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -202,7 +213,7 @@ CREATE TABLE `utenti` (
   `data_nascita` date NOT NULL,
   `data_account` date NOT NULL DEFAULT current_timestamp(),
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `utenti`
@@ -287,7 +298,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `commenti`
 --
 ALTER TABLE `commenti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT per la tabella `giochi`

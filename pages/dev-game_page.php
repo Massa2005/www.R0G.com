@@ -94,10 +94,10 @@
                 €
                 </div><br><br><br><br><br><br><br>
 
-                <form action="../phps/add-trolley.php" method="post">
+                <form action="../phps/add-trolley.php" method="post" id="buy-form">
 
                     <input type="hidden" value="" id="id" name="id" class="center">
-                    <input type="submit" value="Buy" id="buy-button" class="center">
+                    <button id="buy-button" class="center">Buy</button>
                 </form>
 
             </div>
@@ -116,8 +116,8 @@
                 <form action="../phps/add-comment.php" method="post" id="add-comment-div">
                     INSERISCI UN COMMENTO
                     <input type="hidden" name="game_id" id="game_id"><br>
-                    <input type="text" name="titolo" id="titolo" placeholder="TITOLO" class="center commentThing rightFont" style="padding-left:20px;"><br><br>
-                    <textarea name="commento" id="commento" placeholder="COMMENTO" class="center commentThing rightFont" style="padding:40px 0px 0px 40px;"></textarea><br><br>
+                    <input type="text" name="titolo" id="titolo" placeholder="TITOLO" class="center commentThing rightFontWithoutShadow" style="padding-left:20px;"><br><br>
+                    <textarea name="commento" id="commento" placeholder="COMMENTO" class="center commentThing rightFontWithoutShadow" style="padding:40px 0px 0px 40px;"></textarea><br><br>
                     <div class="center">
                     
                         <label for="valutazione">Valutazione: </label>
@@ -150,10 +150,18 @@
 
     if(mail.value == "" || dev.value == "true"){
         document.getElementById("add-comment-div").innerHTML = "DEVI FARE UN LOGIN VALIDO";
+        document.getElementById('buy-button').innerHTML = "NOPE";
     }
     
     fetch("../inPage/comment-list.php").then(data => data.text()).then(html => commenti.innerHTML = html);
-
+    document.getElementById('buy-button').addEventListener('click', 
+    function(event) {
+        event.preventDefault();
+        if(dev.value == "true" || mail.value == ""){
+            return;
+        }
+        document.getElementById('buy-form').submit();
+    });
     /*
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");

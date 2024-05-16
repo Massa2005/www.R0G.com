@@ -20,17 +20,44 @@
         //riordina in ordine di ricerca l array res
         for ($i = count($res)-1; $i>=0;$i--) {
             $item = $res[$i];
-            /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
-            echo '<div class="center commento" style="">
+            if($item["valutazione"] < 4){
+                echo '<div class="center commento" style="">
             <div class="com-sinistra" style="">
                 <h1 class="center" style="width:100%; text-align:center;"> '.$item["titolo"].'</h1>
                 <div class="center">'.$item["commento"].'</div>
             </div>
             <div class="com-destra" style="">
                 <div >'.$item["mail_utente"].'</div>
-                <h2 class="center">'.$item["valutazione"].'</h2>
+                <h2 class="center votoCommento" style="border-color:red;box-shadow: 0px 0px 10px red;">'.$item["valutazione"].'</h2>
             </div>
         </div>';
+            }
+            else if($item["valutazione"] > 6){
+                echo '<div class="center commento" style="">
+            <div class="com-sinistra" style="">
+                <h1 class="center" style="width:100%; text-align:center;"> '.$item["titolo"].'</h1>
+                <div class="center" >'.$item["commento"].'</div>
+            </div>
+            <div class="com-destra" style="">
+                <div >'.$item["mail_utente"].'</div>
+                <h2 class="center votoCommento" style="border-color:green;box-shadow: 0px 0px 10px green;">'.$item["valutazione"].'</h2>
+            </div>
+        </div>';
+            }
+            else{
+                echo '<div class="center commento" style="">
+            <div class="com-sinistra" style="">
+                <h1 class="center" style="width:100%; text-align:center;"> '.$item["titolo"].'</h1>
+                <div class="center">'.$item["commento"].'</div>
+            </div>
+            <div class="com-destra" style="">
+                <div >'.$item["mail_utente"].'</div>
+                <h2 class="center votoCommento" style="border-color:orange;box-shadow: 0px 0px 10px orange; ">'.$item["valutazione"].'</h2>
+            </div>
+        </div>';
+            }
+            /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
+            
         }
     
         

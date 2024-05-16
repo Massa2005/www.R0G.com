@@ -23,7 +23,7 @@
         
     
         <div class="center" id="searchdiv">
-            <input type="text" id="searchbar" placeholder="search">
+            <input type="text" id="searchbar" placeholder="search" autocomplete="off">
             <button onclick="search()" id="searchbutt">&nbsp;</button>
 
             
@@ -39,6 +39,11 @@
             <div id="log-out" class="rowButton rightFont" style="color:rgba(239,49,128,255);text-shadow: 0px 0px 5px rgba(239,49,128,255);">
                 log-out
             </div>
+        </div>
+        <div class="center" style="" id="carrelloIcon">
+            <a href="pages/trolley.php">
+                <img src="sources/pngegg.png" alt="" style="height:100px;width:100px">
+            </a>
         </div>
     </div>
     <div id="content" style="position:relative; top:250px">
