@@ -23,8 +23,9 @@
         
     
         <div class="center" id="searchdiv">
-            <button onclick="search()" id="searchbutt">&nbsp;</button>
             <input type="text" id="searchbar" placeholder="search">
+            <button onclick="search()" id="searchbutt">&nbsp;</button>
+
             
         </div>
         
@@ -122,6 +123,7 @@
 
 
 <script>
+    let searchBar = document.getElementById("searchdiv");
     let loginButton = document.getElementById("log-in");
     let logoutButton = document.getElementById("log-out");
     let registerButton = document.getElementById("register");
@@ -148,6 +150,26 @@
     loginButton.addEventListener("click",(event)=>{loginBehaviour();});
     logoutButton.addEventListener("click",(event)=>{ window.location.href="phps/logout.php";});
     registerButton.addEventListener("click",(event)=>{ window.location.href="pages/pre-register.php";});
+    searchBar.addEventListener("focusin", (event)=>{
+        let searchField = document.getElementById("searchbar");
+        console.log("ciao");
+        searchBar.style.animation = "forwards";
+        searchBar.style.animationName = "ingrandimentoBarraDiricerca";
+        searchBar.style.animationDuration = "200ms";
+        searchField.style.animation = "forwards";
+        searchField.style.animationName = "ingrandimentoTextField";
+        searchField.style.animationDuration = "200ms";
+    });
+    searchBar.addEventListener("focusout", (event)=>{
+        let searchField = document.getElementById("searchbar");
+        console.log("ciao");
+        searchBar.style.animation = "forwards";
+        searchBar.style.animationName = "rimpicciolimentoRicerca";
+        searchBar.style.animationDuration = "200ms";
+        searchField.style.animation = "forwards";
+        searchField.style.animationName = "rimpicciolimentoField";
+        searchField.style.animationDuration = "200ms";
+    });
     sbar.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();

@@ -22,6 +22,7 @@
         width: 1000;
     }
 }
+
 body{
     background-color: rgb(255, 255, 255);
     height: 100%;
@@ -71,6 +72,27 @@ input{
     animation-duration: 200ms;
     animation-fill-mode:forwards;
 }
+.rowButtonofGamePage{
+    float: left;
+    margin: 0px 3px 0px 3px;
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.800);
+    width: 200px;
+    
+    line-height: 200px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 15px;
+    font-size: 25px;
+    box-shadow: 0px 0px 5px black;
+}
+.rowButtonofGamePage:hover{
+    cursor: pointer;
+   
+    animation-name: inscurimentoButtonIngamePage;
+    animation-duration: 200ms;
+    animation-fill-mode:forwards;
+}
 .borderContainer{
     
     position: relative;
@@ -88,9 +110,7 @@ input{
     animation: forwards;
     animation-name: ingrandimentoBoxShadow;
     animation-duration: 1s;
-    
-   
-    
+
 }
 @keyframes ingrandimentoBoxShadow {
     0%{
@@ -188,24 +208,123 @@ input{
     top: 25px;
     width:fit-content;
     
-}
-
-#searchbar{
     height: 30px;
     width: 250px;
     font-size: large;
     color: white;
-    background-color: black;
+    
     border: solid;
-    border-color: black;
+    border-color: rgba(0, 0, 0, 0);
     border-radius: 15px;
+    border-width: 0px;
     padding-left: 10px;
+    
+    background-image: url(/sources/backgroundimage.png);
+    background-size:700px;
+    background-repeat: no-repeat;
+    
+    background-position: 400 -400;
+    background-color: black;
+    
+   
+}
+
+
+    
+
+    
+
+@keyframes ingrandimentoBarraDiricerca {
+    from{
+        height: 30px;
+        width: 250px;
+        background-position: 400px -400px;
+
+    }
+    to{
+        height: 75px;
+        width: 600px;
+        
+        border-radius: 40px;
+        background-position: 0px 0px;
+        
+        
+    }
+}
+@keyframes rimpicciolimentoRicerca {
+    from{
+        
+        height: 75px;
+        width: 600px;
+        
+        border-radius: 40px;
+        background-position: 0px 0px;
+        
+
+    }
+    to{
+        height: 30px;
+        width: 250px;
+        border-radius: 20px;
+        background-position: 400px -400px;
+
+    }
+}
+
+
+#searchbar{
+    
+    background-color: #00000000;
+    color: white;
+    border: solid;
+    border-width: 0px;
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 0px;
+    height: 30px;
+    width: 200px;
+    
+}
+#searchbar:focus{
+    outline: none;
+}
+@keyframes ingrandimentoTextField {
+    from{
+        
+    }
+    to{
+        height: 50px;
+        width: 450px;
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 30px;
+    }
+}
+@keyframes rimpicciolimentoField {
+    from{
+        height: 50px;
+        width: 450px;
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 30px;
+    }
+    to{
+        height: 30px;
+        width: 200px;
+        margin-left: 0px;
+        margin-top: 0px;
+        font-size: 15px;
+        
+        
+    }
 }
 #searchbutt{
+    
     border-radius: 15px;
     height: 30px;
     width: 30px;
-    
+    border: solid;
+    visibility: hidden;
+    background-color: rgb(0, 0, 0);
     background-image: url("sources/search.png");
     background-position: 2px 2px;
     background-size: contain;
@@ -240,6 +359,23 @@ input{
     animation-duration: 200ms;
     animation-fill-mode:forwards;
 }
+#logoInPage{
+    position:absolute;
+    
+    height: 125px;
+    width: 225px;
+
+    background-color: rgba(0, 0, 0, 0.700);
+    left: 25px;
+    border-radius: 70px;
+    top:20px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+#logoInPage:hover{
+    animation-name: inscurimentoLogoInGamePage;
+    animation-duration: 200ms;
+    animation-fill-mode:forwards;
+}
 @keyframes inscurimentoLogo {
     from{
         background-color: rgba(0, 0, 0, 0.500);
@@ -248,6 +384,30 @@ input{
     }
     to{
         background-color: rgba(0, 0, 0, 0.700);
+        text-shadow: 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1);
+        color: rgb(244, 127, 175);
+    }
+}
+@keyframes inscurimentoLogoInGamePage {
+    from{
+        background-color: rgba(0, 0, 0, 0.700);
+        text-shadow: 0px 0px 5px rgba(239,49,128,1);
+        color: auto;
+    }
+    to{
+        background-color: rgba(0, 0, 0, 0.800);
+        text-shadow: 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1);
+        color: rgb(244, 127, 175);
+    }
+}
+@keyframes inscurimentoButtonIngamePage {
+    from{
+        
+        text-shadow: 0px 0px 5px rgba(239,49,128,1);
+        color: auto;
+    }
+    to{
+        
         text-shadow: 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1), 1px 1px 20px rgba(239,49,128,1);
         color: rgb(244, 127, 175);
     }
@@ -283,6 +443,8 @@ input{
 .rightFont{
     font-family: myFont;
     color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+
 }
 .rightFontLogginANDRegister{
     font-family: myFont;
@@ -291,10 +453,12 @@ input{
 .rightFontBlack{
     font-family: myFont;
     color: black;
+    
 }
 .rightFontMoreThicker{
     font-family: myFontMoreThicker;
     color: white;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
     
 }
 #dev-gameName{
@@ -336,19 +500,41 @@ input{
     font-size: 30px;
 }
 #buy-button{
-    background: linear-gradient(170deg, rgba(157,211,50,1) 0%, rgba(130,156,81,1) 51%, rgba(116,143,63,1) 86%, rgba(81,98,48,1) 100%);
-    width: 300px;
+    cursor: pointer;
+    width: 250px;
     height: 50px;
     font-size: xx-large;
     font-family: myFontMoreThicker;
-    border-color: rgba(240, 248, 255, 0);
-    border-radius: 10px;
-    border-width: 0px;
+    border:solid;
+    border-color:white;
+    border-radius: 25px;
+    background-color: #000000;
+    color: white;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
 #buy-button:hover{
-    box-shadow: inset 5px 5px 4px -3px #0000005b;
-    padding: 5px 0px 0px 5px;
-    outline: none;
+    border-bottom-width: 3px;
+    border-right-width: 3px;
+    border-left-width: 3px;
+    border-top-width: 3px;
+    border-color: rgb(255, 255, 255);
+    
 }
 #addGameButt{
     position: absolute;
@@ -363,25 +549,32 @@ input{
     border-radius: 10px;
     outline: none;
 }
+
 #addGameButt:hover{
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 23%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);
     color: black;
     border-width: 0px;
 }
 #add-comment-div{
+    
+    border: solid;
+    border-radius: 10px;
+    border-width: 0px;
     background-color: rgb(83, 83, 83);
-    padding: 10px 10px 10px 10px;
-    box-shadow: inset 8px 10px 28px -16px #ff2222;
+    padding: 30px 20px 20px 30px;
+    box-shadow: inset 0px 0px 28px 1px #000000;
     
 }
 
 #commento{
-
+    
     width: 600px;
     height: 200px;
     
 }
 .commento{
+    border-radius: 10px;
+    background-color: black;
     width: 800px;
     padding: 10px 10px 10px 10px;
     margin: 15px 0px 15px 0px;
@@ -401,17 +594,31 @@ input{
 .commentThing{
     background-color: rgb(156, 156, 156);
     font-size: large;
+    color: white;
     padding: 4px 10px 4px 10px;
-    border-radius: 0px;
+    border-radius: 10px;
     border-width: 0px;
+    
+    box-shadow: inset 0px 0px 28px 5px rgb(83, 83, 83) ;
+    
 }
 .commentThing:focus{
-    box-shadow: inset 5px 5px 4px -3px #0000005b;
-    border-radius: 0px;
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: #000000;
+    
+    box-shadow: inset 0px 0px 10px 5px rgb(83, 83, 83) ;
+    
     outline: none;
+}
+#bottoneAggiuntaCommenti{
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    background-color: black;
+    border: solid;
+    border-color: black;
+    color: white;
+    border-radius: 10px;
+    text-shadow: 0px 0px 5px rgb(255, 255, 255);
+
 }
 .main-list-element{
     position: relative;
@@ -477,4 +684,41 @@ input{
 
         transform: scale(1);
     }
+}
+.trolley-element{
+    position: relative;
+    background-color: #677dad;
+    width: 400px;
+    height: 70px;
+    padding: 15px 15px 15px 15px;
+    top: 100px;
+}
+.trolley-img{
+    position: absolute;
+    top: 15px;
+    height: 70px;
+    width: 70px;
+}
+.trolley-name{
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 30;
+}
+.trolley-cost{
+    background-color: #869ac4;
+    position: absolute;
+    top: 0px;
+    height: 100px;
+    line-height: 70px;
+    width: 100px;
+    left: 330px;
+    text-align: center;
+}
+.trolley-delete{
+    position: absolute;
+    top: 70px;
+    left: 350px;
 }

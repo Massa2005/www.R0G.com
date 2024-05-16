@@ -55,22 +55,22 @@
         
     <div id="header">
         <a href="../index.php">
-            <img src="../sources/Logo.png" id="logo">
+            <img src="../sources/Logo.png" id="logoInPage">
         </a>
-        <div class="center" style="width:fit-content; top: 110px">
-            <div id="register" class="rowButton rightFont">
+        <div class="center" style="width:fit-content; top: 100px">
+            <div id="register" class="rowButtonofGamePage rightFont">
                 Statistic
             </div>
-            <div id="log-in" class="rowButton rightFont">
+            <div id="log-in" class="rowButtonofGamePage rightFont">
                 Game
             </div>
-            <div id="log-out" class="rowButton rightFont">
+            <div id="log-out" class="rowButtonofGamePage rightFont">
                 Boh
             </div>
         </div>
     </div>
-    <div id='content' style="position:absolute; top:150px;" class="center">
-        <div id="dev-game-central-div" class="center colorOfInpageElement">
+    <div id='content' style="position:absolute; top:150px; " class="center">
+        <div id="dev-game-central-div" class="center colorOfInpageElement" style="border-radius:10px;">
             
             
             <?php
@@ -116,14 +116,15 @@
                 <form action="../phps/add-comment.php" method="post" id="add-comment-div">
                     INSERISCI UN COMMENTO
                     <input type="hidden" name="game_id" id="game_id"><br>
-                    <input type="text" name="titolo" id="titolo" placeholder="TITOLO" class="center commentThing"><br><br>
-                    <textarea name="commento" id="commento" placeholder="COMMENTO" class="center commentThing"></textarea><br><br>
+                    <input type="text" name="titolo" id="titolo" placeholder="TITOLO" class="center commentThing rightFont" style="padding-left:20px;"><br><br>
+                    <textarea name="commento" id="commento" placeholder="COMMENTO" class="center commentThing rightFont" style="padding:40px 0px 0px 40px;"></textarea><br><br>
                     <div class="center">
+                    
                         <label for="valutazione">Valutazione: </label>
                         <input type="number" name="valutazione" min="0" max="10" id="valutazione" class="commentThing" value="5">
                     </div>
                     <br>
-                    <input type="submit" value="publish" style="float:right;"><br><br>
+                    <input type="submit" value="publish" style="float:right;" id="bottoneAggiuntaCommenti"><br><br>
                 </form>
                 <div id="dev-valutazione-Gioco">
                     DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI

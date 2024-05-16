@@ -21,7 +21,7 @@
         for ($i = count($res)-1; $i>=0;$i--) {
             $item = $res[$i];
             /*devo mettere una scritta 'Lista dei giochi' sopra al div della lista dei giochi */
-            echo '<div class="center commento" style="background-color:gray;">
+            echo '<div class="center commento" style="">
             <div class="com-sinistra" style="">
                 <h1 class="center" style="width:100%; text-align:center;"> '.$item["titolo"].'</h1>
                 <div class="center">'.$item["commento"].'</div>
