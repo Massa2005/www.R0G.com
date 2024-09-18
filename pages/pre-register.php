@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="../mainStyle.css">
+<link rel="icon" href="../sources/Logo.png">
+<title>R0G</title>
 <style>
     body{
         background-color:black;

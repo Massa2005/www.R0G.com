@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="../mainStyle.css">
+<link rel="icon" href="../sources/Logo.png">
+<title>R0G</title>
 <?php
     session_start();
     echo '<input type="hidden" id="result" value="'.$_POST["result"].'">';
@@ -116,7 +118,8 @@
                     ?>
                 </div><br><br><br>
                 <h1>VALUTAZIONI</h1><br>
-                <form action="../phps/add-comment.php" method="post" id="add-comment-div">
+                <div id="add-comment-div">
+                <form action="../phps/add-comment.php" method="post" >
                     INSERISCI UN COMMENTO
                     <input type="hidden" name="game_id" id="game_id"><br>
                     <input type="text" name="titolo" id="titolo" placeholder="TITOLO" class="center commentThing rightFontWithoutShadow" style="padding-left:20px;"><br><br>
@@ -129,6 +132,8 @@
                     <br>
                     <input type="submit" value="publish" style="float:right;" id="bottoneAggiuntaCommenti"><br><br>
                 </form>
+                </div>
+                
                 <div id="dev-valutazione-Gioco">
                     DIV CHE CONTIENE LA SEZIONE DELLE VALUTAZIONI E DEI COMMENTI
                     
@@ -148,6 +153,9 @@
     let keys = document.getElementById("in-num");
     let game_id = document.getElementById("game_id");
     let commenti = document.getElementById("dev-valutazione-Gioco");
+    let bottoneValutazioni= document.getElementById("log-out");
+    let bottoneStatistics= document.getElementById("register");
+
     
     id.value = idin.value;
     game_id.value = idin.value;
@@ -157,9 +165,24 @@
     if(keys.value == "0"){
         document.getElementById('buy-button').innerHTML = "NO KEY";
     }
-    if(mail.value == "" || dev.value == "true"){
+    if(mail.value == ""){
         document.getElementById("add-comment-div").innerHTML = "DEVI FARE UN LOGIN VALIDO";
         document.getElementById('buy-button').innerHTML = "NOPE";
+    }else if( dev.value == "true"){ 
+        fetch("../inPage/add-key-form.php").then(data => data.text()).then(
+            html => {document.getElementById("add-comment-div").innerHTML = html;
+                document.getElementById("game_id").value =idin.value;
+            });
+        try {
+            if (document.getElementById("result").value == "no") {
+                document.getElementById("errorekey").value = "cambia key";
+            }else{
+                document.getElementById("errorekey").value = "";
+            }
+            
+        } catch (error) {
+            
+        }
     }
     
     fetch("../inPage/comment-list.php").then(data => data.text()).then(html => commenti.innerHTML = html);
@@ -192,4 +215,11 @@
         console.log("fatto");
         fetch(page).then(data => data.text()).then(html => document.getElementById('content').innerHTML = html);
     }*/
+
+    bottoneValutazioni.addEventListener("click", (event)=>{
+            document.documentElement.scrollTop = document.body.scrollTop=1000;
+    });
+    bottoneStatistics.addEventListener("click", (event)=>{
+            document.documentElement.scrollTop = document.body.scrollTop=400;
+    });
 </script>

@@ -25,13 +25,13 @@
         $sql = "SELECT * FROM libreria WHERE mail_utente='".$_SESSION["mail"]."'";
         
         
-        $res = $conn->query($sql)->fetchAll();
+        $resa = $conn->query($sql)->fetchAll();
         
 
         //riordina in ordine di ricerca l array res
-        for ($i = count($res)-1; $i>=0;$i--) {
+        for ($i = 0; $i<count($resa);$i++) {
 
-            $item = $res[$i];
+            $item = $resa[$i];
 
             $sql = "SELECT * FROM giochi WHERE id='".$item["game_id"]."'";
             $res = $conn->query($sql)->fetchAll();

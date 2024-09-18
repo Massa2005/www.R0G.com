@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="mainStyle.css">
+<link rel="icon" href="sources/Logo.png">
+<title>R0G</title>
 <style>
     body{
         background: rgb(215,88,233);
@@ -8,6 +10,7 @@
     }
 </style>
 <html>
+        
     <?php
         ini_set('display_errors','Off');
         session_start();

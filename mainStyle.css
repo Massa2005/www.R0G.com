@@ -219,7 +219,7 @@ input{
     border-width: 0px;
     padding-left: 10px;
     
-    background-image: url(/sources/backgroundimage.png);
+    background-image: url(sources/backgroundimage.png);
     background-size:700px;
     background-repeat: no-repeat;
     
